@@ -3,7 +3,8 @@
 }
 
 body {
-    background-color:aquamarine;
+    background-color: white;
+    margin:0%;
 }
 
 #main {
@@ -11,23 +12,24 @@ body {
 }
 
 #teeTable {
-    width: 75%;
+    width: 64%;
     border-collapse: collapse;
-    background-color: blue;
+    background-color: lightgrey;
     float: left;
 }
 
 #notes {
-    width: 25%;
+    width: 36%;
     background-color: white;
+    border: 1px solid #4CAF50;
     float: right;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #4CAF50;
 }
 
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
