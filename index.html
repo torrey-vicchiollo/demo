@@ -26,14 +26,14 @@
     <script>"teeTimeManager.js"</script>
 </head>
 <body>
-    <button >Add Tee Time</button>
-    <input type= "text" id="timeInput">
-    <input type="text" id="player1" placeholder="x"> 
-    <input type="text" id="player2" placeholder="x">
-    <input type="text" id="player3" placeholder="x">
-    <input type="text" id="player 4" placeholder="x">
+    <button onclick="addTeeTime()">Add Tee Time</button>
+    <input type="text" id="timeInput" placeholder="Time">
+    <input type="text" id="player1" placeholder="Player 1"> 
+    <input type="text" id="player2" placeholder="Player 2">
+    <input type="text" id="player3" placeholder="Player 3">
+    <input type="text" id="player4" placeholder="Player 4"> <!-- Corrected ID -->
     <h2>Tee Time Table</h2>
-    <table>
+    <table id="teeTimesTable"> <!-- Added ID -->
         <thead>
             <tr>
                 <th>Time</th>
@@ -43,12 +43,10 @@
                 <th>Player 4</th>
             </tr>
         </thead>
-        <tbody >
-            <tr>
-
-            </tr>
-            <!-- More rows can be added here -->
+        <tbody>
+            <!-- Rows will be added here -->
         </tbody>
     </table>
+    <script src="teeTimeManager.js"></script>
 </body>
 </html>
