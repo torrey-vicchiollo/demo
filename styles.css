@@ -18,6 +18,7 @@ body {
     border: 1px solid #4CAF50;
     float: left;
     border-collapse: collapse;
+    height: 66%;
 }
 
 #notes {
@@ -25,6 +26,7 @@ body {
     background-color: white;
     border: 1px solid #4CAF50;
     float: right;
+    height: 66%;
 }
 
 table, th, td {
@@ -39,8 +41,6 @@ th, td {
 }
 
 .header {
-    padding-left: 66px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-left: 33px;
     font-size: 22px;
 }
