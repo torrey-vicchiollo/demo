@@ -15,7 +15,7 @@ body {
 #teeTable {
     width: 66%;
     background-color: white;
-    border: 1px solid rgb(25, 81, 27);
+    border: 1px solid #4CAF50;
     float: left;
     border-collapse: collapse;
 }
@@ -23,7 +23,7 @@ body {
 #notes {
     width: 33%;
     background-color: white;
-    border: 1px solid rgb(25, 81, 27);
+    border: 1px solid #4CAF50;
     float: right;
 }
 
@@ -38,6 +38,9 @@ th, td {
     background-color: lightgray;
 }
 
-h4 {
+.header {
     padding-left: 66px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 22px;
 }
