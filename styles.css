@@ -17,6 +17,7 @@ body {
     background-color: white;
     border: 1px solid rgb(25, 81, 27);
     float: left;
+    border-collapse: collapse;
 }
 
 #notes {
@@ -35,4 +36,8 @@ th, td {
     padding-right: 33px;
     text-align: center;
     background-color: lightgray;
+}
+
+h4 {
+    padding-left: 66px;
 }
