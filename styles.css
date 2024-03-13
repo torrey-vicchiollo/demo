@@ -4,24 +4,25 @@
 
 body {
     background-color: rgb(255, 255, 255);
-    margin: 50px;;
+    margin: 66px;
 }
 
 #main {
     display: flex;
+    column-gap: 33px;
 }
 
 #teeTable {
-    width: 64%;
-    border-collapse: collapse;
-    background-color: lightgrey;
+    width: 66%;
+    background-color: white;
+    border: 1px solid rgb(25, 81, 27);
     float: left;
 }
 
 #notes {
-    width: 36%;
+    width: 33%;
     background-color: white;
-    border: 1px solid #4CAF50;
+    border: 1px solid rgb(25, 81, 27);
     float: right;
 }
 
@@ -30,8 +31,8 @@ table, th, td {
 }
 
 th, td {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 33px;
+    padding-right: 33px;
     text-align: center;
     background-color: lightgray;
 }
