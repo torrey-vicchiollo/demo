@@ -9,10 +9,12 @@
 #teeTable {
     width: 75%;
     border-collapse: collapse;
+    background-color: red;
 }
 
 #notes {
-    width: 75%;
+    width: 25%;
+    background-color: blue;
 }
 
 table, th, td {
