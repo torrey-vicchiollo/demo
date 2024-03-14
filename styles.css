@@ -11,7 +11,7 @@ body {
     background-color: lightgrey;
     margin: auto;
     padding: 12px;
-    width: 84%;
+    width: 82%;
 }
 
 #main {
@@ -29,11 +29,11 @@ body {
     width: 60%;
 }
 
-table.alternate tr:nth-child(odd) {
+#teeTimesTable.alternate tr:nth-child(odd) {
     background-color: white;
 }
  
-table.alternate tr:nth-child(even) {
+#teeTimesTable.alternate tr:nth-child(even) {
     background-color: lightgray;
 }
 
