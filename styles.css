@@ -39,7 +39,7 @@ body {
 }
 
 th, td {
-    font-size: 15px;
+    font-size: 10px;
     padding-left: 50px;
     padding-right: 50px;
     text-align: center;
@@ -52,16 +52,16 @@ th {
 
 #headerTitle {
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     padding-left: 30px;
 }
 
 #teeTableTitle {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #notesTitle {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #notesBody {
