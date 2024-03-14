@@ -1,14 +1,23 @@
 <html>
+
     <head>
+
         <title>Launch Angle Demo</title>
         <link rel="stylesheet" href="styles.css"></link>
-        <script src="teeTimeManager.js"></script>     
+        <script src="teeTimeManager.js"></script>  
+
     </head>
+
     <body>
+
+        <!-- header -->
         <div id="header">
             <p id="headerTitle">Launch Angle Demo</p>
         </div>
+
         <br>
+
+        <!-- tee time insert section -->
         <div id="insert">
             <button id="insertButton" onclick="addTeeTime()">Add Tee Time</button>
             <input id="timeInput" type="text" placeholder="Time">
@@ -17,8 +26,13 @@
             <input id="player3" type="text" placeholder="X">
             <input id="player4" type="text" placeholder="X">
         </div>
+        
         <br>
+
+        <!-- main section -->
         <div id="main">
+
+            <!-- tee table-->
             <div id="teeTable">
                 <p id="teeTableTitle">Tee Times</p>
                 <table id="teeTimesTable">
@@ -34,6 +48,8 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- notes section -->
             <div id="notes">
                 <p id="notesTitle">Daily Notes</p>
                 <p id="notesBody">Notes will be displayed here</p>
@@ -43,6 +59,9 @@
                 <button id="notesButton">Submit</button>
                 <br>
             </div>
+
         </div>
+
     </body>
+
 </html>
