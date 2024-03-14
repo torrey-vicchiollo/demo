@@ -29,18 +29,18 @@ body {
     height: 66%;
 }
 
-table, th, td {
-    border: 1px solid #4CAF50;
+tr:hover {
+    background-color: white;
 }
 
 th, td {
-    padding-left: 33px;
-    padding-right: 33px;
+    padding-left: 66px;
+    padding-right: 66px;
     text-align: center;
     background-color: lightgray;
 }
 
 .header {
     padding-left: 33px;
-    font-size: 22px;
+    font-size: 11px;
 }
