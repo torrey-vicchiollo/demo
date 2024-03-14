@@ -22,12 +22,19 @@ body {
 }
 
 #teeTable {
-    background-color: white;
     border: 1px solid #4CAF50;
     border-collapse: collapse;
     float: left;
     padding: 24px;
     width: 60%;
+}
+
+table.alternate tr:nth-child(odd) {
+    background-color: white;
+}
+ 
+table.alternate tr:nth-child(even) {
+    background-color: lightgray;
 }
 
 #notes {
@@ -87,6 +94,10 @@ button {
     padding: 12px;
     font-size: 12px;
 
+}
+
+#insertButton {
+    background-color: white;
 }
 
 button:hover{
