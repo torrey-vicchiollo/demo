@@ -4,30 +4,30 @@
 
 body {
     background-color: rgb(255, 255, 255);
-    margin: 66px;
+    margin: 30px;
 }
 
 #main {
     display: flex;
-    column-gap: 33px;
+    column-gap: 30px;
 }
 
 #teeTable {
-    width: 66%;
+    width: 60%;
     background-color: white;
     border: 1px solid #4CAF50;
     float: left;
     border-collapse: collapse;
-    height: 66%;
+    height: 60%;
 }
 
 #notes {
-    width: 33%;
+    width: 30%;
     background-color: white;
     border: 1px solid #4CAF50;
     float: right;
-    height: 66%;
-    padding-left: 33px;
+    height: 60%;
+    padding-left: 30px;
 }
 
 tr:hover {
@@ -35,18 +35,20 @@ tr:hover {
 }
 
 th, td {
-    padding-left: 66px;
-    padding-right: 66px;
+    padding-left: 60px;
+    padding-right: 60px;
     text-align: center;
-    background-color: lightgray;
+    background-color: #4CAF50;
 }
 
 th {
-    font-size: 11px;
+    font-size: 15px;
+    color: white;
 }
 
 .header {
-    font-size: 22px;
+    font-size: 30px;
+    padding-left: 60px;
 }
 
 .notesBody {
