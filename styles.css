@@ -10,15 +10,15 @@ body {
 #insert {
     background-color: lightgrey;
     margin: auto;
-    padding: 20px;
-    width: 90%;
+    padding: 24px;
+    width: 84%;
 }
 
 #main {
-    column-gap: 20px;
+    column-gap: 24px;
     display: flex;
     margin: auto;
-    width: 90%;
+    width: 84%;
 }
 
 #teeTable {
@@ -26,7 +26,7 @@ body {
     border: 1px solid #4CAF50;
     border-collapse: collapse;
     float: left;
-    padding: 20px;
+    padding: 24px;
     width: 60%;
 }
 
@@ -34,14 +34,14 @@ body {
     background-color: white;
     border: 1px solid #4CAF50;
     float: right;
-    padding: 20px;
-    width: 30%;
+    padding: 24px;
+    width: 36%;
 }
 
 th, td {
-    font-size: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    font-size: 12px;
+    padding-left: 48px;
+    padding-right: 48px;
     text-align: center;
 }
 
@@ -52,16 +52,16 @@ th {
 
 #headerTitle {
     color: white;
-    font-size: 25px;
-    padding-left: 30px;
+    font-size: 24px;
+    padding: 24px;
 }
 
 #teeTableTitle {
-    font-size: 25px;
+    font-size: 24px;
 }
 
 #notesTitle {
-    font-size: 25px;
+    font-size: 24px;
 }
 
 #notesBody {
@@ -80,4 +80,14 @@ th {
 
 button {
     border: none;
+    background-color: lightgray;
+    color: black;
+    padding: 12px;
+    font-size: 12px;
+
+}
+
+button:hover{
+    background-color: #4CAF50;
+    color: white;
 }
