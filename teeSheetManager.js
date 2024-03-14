@@ -21,15 +21,10 @@ function createTimeInterval() {
 function fillTeeTimeSelect() {
     let times = createTimeInterval(); // Call the function to get the times array
     let select = document.getElementById("teeTimeSelect");
-    let option = document.createElement("option");
-    option.value = 'hello'; // Use times[i] for value
-    option.text = 'hello'; // Use times[i] for text
-    console.log(option);
-    select.appendChild(option);
-    // for (let i = 0; i < times.length; i++) {
-    //     let option = document.createElement("option");
-    //     option.value = times[i]; // Use times[i] for value
-    //     option.text = times[i]; // Use times[i] for text
-    //     select.appendChild(option);
-    // }
+    for (let i = 0; i < times.length; i++) {
+        let option = document.createElement("option");
+        option.value = times[i]; // Use times[i] for value
+        option.text = times[i]; // Use times[i] for text
+        select.appendChild(option);
+    }
 }
