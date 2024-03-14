@@ -41,8 +41,12 @@ th, td {
     background-color: lightgray;
 }
 
-.header {
+th {
     font-size: 11px;
+}
+
+.header {
+    font-size: 22px;
 }
 
 .notesBody {
