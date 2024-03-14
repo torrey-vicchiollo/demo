@@ -53,3 +53,7 @@ th {
     color: gray;
     font-style: italic;
 }
+
+textarea {
+    resize: none;
+}
