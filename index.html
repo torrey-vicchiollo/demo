@@ -11,6 +11,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             fillTeeTimeSelect("teeTimeSelectStart");
             fillTeeTimeSelect("teeTimeSelectEnd");
+            fillInIntervals();
         });
     </script>
 </head>
@@ -29,6 +30,13 @@
     <label for="teeTimeSelectEnd">End Time</label>
     <select id="teeTimeSelectEnd">
     </select>
+    <label for="intervalSelector">Interval</label>
+    <select id="intervalSelector">
+        
+
+
+
+    </select>
     <button id="createButton" onclick="createTeeSheet()">Create</button>
 
     <!-- tee time insert section -->
@@ -45,7 +53,6 @@
 
     <!-- main section -->
     <div id="main">
-
         <!-- tee table-->
         <div id="teeTable">
             <p id="teeTableTitle">Tee Times</p>
