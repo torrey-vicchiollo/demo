@@ -31,9 +31,11 @@ function fillTeeTimeSelect(idName) {
 
 function fillInIntervals(){
     let a = 4;
+    let select = document.getElementById("intervalSelector");
     for (let i = 0 ; i < 10 ; i++){
         let option = document.createElement("option");
         option.value = a; // Use times[i] for value
         option.text = a; // Use times[i] for text
+        select.appendChild(option);
     }
 }
