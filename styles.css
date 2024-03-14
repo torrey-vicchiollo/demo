@@ -22,7 +22,7 @@ body {
 }
 
 #main {
-    column-gap: 6%;
+    column-gap: 24px;
     display: flex;
     margin: auto;
     width: 84%;
@@ -33,7 +33,7 @@ body {
     border-collapse: collapse;
     float: left;
     padding: 24px;
-    width: 72%;
+    width: 60%;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -50,7 +50,7 @@ body {
     border: 1px solid #4CAF50;
     float: right;
     padding: 24px;
-    width: 24%;
+    width: 36%;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
