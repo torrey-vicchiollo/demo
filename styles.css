@@ -69,5 +69,8 @@ th {
 #header {
     background-color: #4CAF50;
     width: 100%;
-    color: white;
+}
+
+button {
+    border: none;
 }
