@@ -1,47 +1,48 @@
 <html>
     <head>
-        <title>Demo</title>
+        <title>Launch Angle Demo</title>
         <link rel="stylesheet" href="styles.css"></link>
         <script src="teeTimeManager.js"></script>     
     </head>
     <body>
-        <header>
-            <p class="header">Demooooooooooooooooooooooooooooooooooooooooooo</p>
-        </header>
-        <div id="insertRow">
-            <button onclick="addTeeTime()">Add Tee Time</button>
-            <input type="text" id="timeInput" placeholder="Time">
-            <input type="text" id="player1" placeholder="x"> 
-            <input type="text" id="player2" placeholder="x">
-            <input type="text" id="player3" placeholder="x">
-            <input type="text" id="player4" placeholder="x"> <!-- Corrected ID -->
+        <div id="header">
+            <p id="headerTitle">Launch Angle Demo</p>
         </div>
         <br>
-            <div id="main">
-                <div id="teeTable">
-                    <p class="header">Tee Time Table</p>
-                    <table id="teeTimesTable"> <!-- Added ID -->
-                        <thead><tr>
-                            <th>Time</th>
-                            <th>Player 1</th>
-                            <th>Player 2</th>
-                            <th>Player 3</th>
-                            <th>Player 4</th>
-                        </tr></thead>
-                        <tbody>
-                            <!-- Rows will be added here -->
-                        </tbody>
-                    </table>
-                </div>
-                <div id="notes">
-                    <p class="header">Daily Notes</p>
-                    <p class="notesBody">Notes will be displayed here</p>
-                    <form>
-                        <textarea rows="10" cols="50" placeholder="Enter notes here..."></textarea>
-                    </form>
-                    <button>Submit</button>
-                    <br>
-                </div>
+        <div id="insert">
+            <button id="insertButton" onclick="addTeeTime()">Add Tee Time</button>
+            <input id="timeInput" type="text" placeholder="Time">
+            <input id="player1" type="text" placeholder="X"> 
+            <input id="player2" type="text" placeholder="X">
+            <input id="player3" type="text" placeholder="X">
+            <input id="player4" type="text" placeholder="X">
+        </div>
+        <br>
+        <div id="main">
+            <div id="teeTable">
+                <p id="teeTableTitle">Tee Times</p>
+                <table id="teeTimesTable">
+                    <thead><tr>
+                        <th>Time</th>
+                        <th>Player 1</th>
+                        <th>Player 2</th>
+                        <th>Player 3</th>
+                        <th>Player 4</th>
+                    </tr></thead>
+                    <tbody>
+                        <!-- Rows will be added here -->
+                    </tbody>
+                </table>
             </div>
+            <div id="notes">
+                <p id="notesTitle">Daily Notes</p>
+                <p id="notesBody">Notes will be displayed here</p>
+                <form id="notesForm">
+                    <textarea id="notesTextArea" rows="10" cols="50" placeholder="Enter notes here..."></textarea>
+                </form>
+                <button id="notesButton">Submit</button>
+                <br>
+            </div>
+        </div>
     </body>
 </html>
