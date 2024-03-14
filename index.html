@@ -22,13 +22,21 @@
     <div id="createTeeSheet">
         <script>
             window.onload = function () {
-                // Your startup code here
-                let time = createTimeInterval();
-            };
+                let times = createTimeInterval(); // Corrected function name and variable
 
-            for(let i = 0; i < time.size ; i++){
-                console.log(time[i]);
-            }
+                for (let i = 0; i < times.length; i++) { // Use .length for arrays
+                    console.log(times[i]);
+                }
+
+                // Additional code to populate the select dropdown
+                let select = document.getElementById("teeTimeSelect");
+                times.forEach(function (time) {
+                    let option = document.createElement("option");
+                    option.value = time;
+                    option.text = time;
+                    select.appendChild(option);
+                });
+            };
         </script>
         <label for="teeTimeSelect">Choose a time:</label>
         <select id="teeTimeSelect">
