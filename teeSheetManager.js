@@ -1,12 +1,12 @@
 
 function createTeeSheet() {
-    
+
     
 
 
 }
 
-function createTimeinterval(){
+function createTimeInterval(){
     let times = [];
     for (let hour = 0; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 5) {
@@ -14,5 +14,5 @@ function createTimeinterval(){
             times.push(time);
         }
     }
-    return time;
+    return times; // Corrected return variable
 }
