@@ -20,7 +20,7 @@ function createTimeInterval() {
 
 function fillTeeTimeSelect() {
     let times = createTimeInterval(); // Call the function to get the times array
-    let select = document.getElementById("teeTimeSelect");
+    let select = document.getElementsByClassName("TeeSheetMenu");
     for (let i = 0; i < times.length; i++) {
         let option = document.createElement("option");
         option.value = times[i]; // Use times[i] for value
