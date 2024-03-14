@@ -9,8 +9,9 @@ body {
 
 #insert {
     background-color: lightgrey;
-    padding: 24px;
-    width: 84%;
+    margin: auto;
+    padding: 12px;
+    width: 80%;
 }
 
 #main {
@@ -88,18 +89,26 @@ th {
 
 button {
     border: none;
-    background-color: lightgray;
-    color: black;
     padding: 12px;
     font-size: 12px;
-
 }
 
 #insertButton {
     background-color: white;
+    color: black;
 }
 
-button:hover{
+#insertButton:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#notesButton{
+    background-color: lightgray;
+    color: black;
+}
+
+#notesButton:hover{
     background-color: #4CAF50;
     color: white;
 }
