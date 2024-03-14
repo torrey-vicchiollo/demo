@@ -1,114 +1,137 @@
 <html>
 
-    <head>
+<head>
 
-        <title>Launch Angle Demo</title>
-        <link rel="stylesheet" href="styles.css"></link>
-        <script src="teeTimeManager.js"></script>  
+    <title>Launch Angle Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    </link>
+    <script src="teeTimeManager.js"></script>
+    <script src="teeSheetManager.js"></script>
+</head>
 
-    </head>
+<body>
 
-    <body>
+    <!-- header -->
+    <div id="header">
+        <center>
+            <p id="headerTitle">Launch Angle Demo</p>
+        </center>
+    </div>
 
-        <!-- header -->
-        <div id="header">
-            <center>
-                <p id="headerTitle">Launch Angle Demo</p>
-            </center>
-        </div>
 
-        <!-- tee time insert section -->
-        <div id="insert">
-            <button id="insertButton" onclick="addTeeTime()">Add</button>
-            <input id="timeInput" type="text" size="17" placeholder="Time">
-            <input id="player1" type="text" size="17" placeholder="Player 1"> 
-            <input id="player2" type="text" size="17" placeholder="Player 2">
-            <input id="player3" type="text" size="17" placeholder="Player 3">
-            <input id="player4" type="text" size="17" placeholder="Player 4">
-        </div>
+    <div id="createTeeSheet">
+        <script>
+            window.onload = function () {
+                // Your startup code here
+                let time = createTimeInterval();
+            };
 
-        <br>
+            for(let i = 0; i < time.size ; i++){
+                console.log(time[i]);
+            }
+        </script>
+        <label for="teeTimeSelect">Choose a time:</label>
+        <select id="teeTimeSelect">
+            <!-- Add more options here -->
 
-        <!-- main section -->
-        <div id="main">
+        </select>
+        <button id="createButton" onclick="createTeeSheet()">Create</button>
+    </div>
 
-            <!-- tee table-->
-            <div id="teeTable">
-                <p id="teeTableTitle">Tee Times</p>
-                <table id="teeTimesTable">
-                    <thead><tr>
+    <!-- tee time insert section -->
+    <div id="insert">
+        <button id="insertButton" onclick="addTeeTime()">Add</button>
+        <input id="timeInput" type="text" size="17" placeholder="Time">
+        <input id="player1" type="text" size="17" placeholder="Player 1">
+        <input id="player2" type="text" size="17" placeholder="Player 2">
+        <input id="player3" type="text" size="17" placeholder="Player 3">
+        <input id="player4" type="text" size="17" placeholder="Player 4">
+    </div>
+
+    <br>
+
+    <!-- main section -->
+    <div id="main">
+
+        <!-- tee table-->
+        <div id="teeTable">
+            <p id="teeTableTitle">Tee Times</p>
+            <table id="teeTimesTable">
+                <thead>
+                    <tr>
                         <th>Time</th>
                         <th>Player 1</th>
                         <th>Player 2</th>
                         <th>Player 3</th>
                         <th>Player 4</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr id="tr1">
-                            <td id="td1.1">7:00 AM</td>
-                            <td id="td1.2">...</td>
-                            <td id="td1.3">...</td>
-                            <td id="td1.4">...</td>
-                            <td id="td1.5">...</td>
-                        </tr>
-                        <tr id="tr2">
-                            <td id="td2.1">7:10 AM</td>
-                            <td id="td2.2">...</td>
-                            <td id="td2.3">...</td>
-                            <td id="td2.4">...</td>
-                            <td id="td2.5">...</td>
-                        </tr>
-                        <tr id="tr3">
-                            <td id="td3.1">7:20 AM</td>
-                            <td id="td3.2">...</td>
-                            <td id="td3.3">...</td>
-                            <td id="td3.4">...</td>
-                            <td id="td3.5">...</td>
-                        </tr>
-                        <tr id="tr4">
-                            <td id="td4.1">7:30 AM</td>
-                            <td id="td4.2">...</td>
-                            <td id="td4.3">...</td>
-                            <td id="td4.4">...</td>
-                            <td id="td4.5">...</td>
-                        </tr>
-                        <tr id="tr5">
-                            <td id="td5.1">7:40 AM</td>
-                            <td id="td5.2">...</td>
-                            <td id="td5.3">...</td>
-                            <td id="td5.4">...</td>
-                            <td id="td5.5">...</td>
-                        </tr>
-                        <tr id="tr6">
-                            <td id="td6.1">7:50 AM</td>
-                            <td id="td6.2">...</td>
-                            <td id="td6.3">...</td>
-                            <td id="td6.4">...</td>
-                            <td id="td6.5">...</td>
-                        </tr>
-                        <tr id="tr7">
-                            <td id="td7.1">8:00 AM</td>
-                            <td id="td7.2">...</td>
-                            <td id="td7.3">...</td>
-                            <td id="td7.4">...</td>
-                            <td id="td7.5">...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- notes section -->
-            <div id="notes">
-                <p id="notesTitle">Daily Notes</p>
-                <p id="notesBody">Notes will be displayed here</p>
-                <form id="notesForm">
-                    <textarea id="notesTextArea" rows="10" cols="50" placeholder="Enter notes here..."></textarea>
-                </form>
-                <button id="notesButton">Post</button>
-            </div>
-
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr1">
+                        <td id="td1.1">7:00 AM</td>
+                        <td id="td1.2">...</td>
+                        <td id="td1.3">...</td>
+                        <td id="td1.4">...</td>
+                        <td id="td1.5">...</td>
+                    </tr>
+                    <tr id="tr2">
+                        <td id="td2.1">7:10 AM</td>
+                        <td id="td2.2">...</td>
+                        <td id="td2.3">...</td>
+                        <td id="td2.4">...</td>
+                        <td id="td2.5">...</td>
+                    </tr>
+                    <tr id="tr3">
+                        <td id="td3.1">7:20 AM</td>
+                        <td id="td3.2">...</td>
+                        <td id="td3.3">...</td>
+                        <td id="td3.4">...</td>
+                        <td id="td3.5">...</td>
+                    </tr>
+                    <tr id="tr4">
+                        <td id="td4.1">7:30 AM</td>
+                        <td id="td4.2">...</td>
+                        <td id="td4.3">...</td>
+                        <td id="td4.4">...</td>
+                        <td id="td4.5">...</td>
+                    </tr>
+                    <tr id="tr5">
+                        <td id="td5.1">7:40 AM</td>
+                        <td id="td5.2">...</td>
+                        <td id="td5.3">...</td>
+                        <td id="td5.4">...</td>
+                        <td id="td5.5">...</td>
+                    </tr>
+                    <tr id="tr6">
+                        <td id="td6.1">7:50 AM</td>
+                        <td id="td6.2">...</td>
+                        <td id="td6.3">...</td>
+                        <td id="td6.4">...</td>
+                        <td id="td6.5">...</td>
+                    </tr>
+                    <tr id="tr7">
+                        <td id="td7.1">8:00 AM</td>
+                        <td id="td7.2">...</td>
+                        <td id="td7.3">...</td>
+                        <td id="td7.4">...</td>
+                        <td id="td7.5">...</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-    </body>
+        <!-- notes section -->
+        <div id="notes">
+            <p id="notesTitle">Daily Notes</p>
+            <p id="notesBody">Notes will be displayed here</p>
+            <form id="notesForm">
+                <textarea id="notesTextArea" rows="10" cols="50" placeholder="Enter notes here..."></textarea>
+            </form>
+            <button id="notesButton">Post</button>
+        </div>
+
+    </div>
+
+</body>
 
 </html>
