@@ -59,3 +59,8 @@ th {
 textarea {
     resize: none;
 }
+
+header {
+    background-color: #4CAF50;
+    width: 100%;
+}
