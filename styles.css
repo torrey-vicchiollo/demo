@@ -67,10 +67,12 @@ th {
 #notesBody {
     color: gray;
     font-style: italic;
+    font-size: 12px;
 }
 
 #notesTextArea {
     resize: none;
+    font-size: 12px;
 }
 
 #header {
