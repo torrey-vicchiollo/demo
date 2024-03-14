@@ -25,5 +25,6 @@ function fillTeeTimeSelect() {
         option.value = times[i]; // Use times[i] for value
         option.text = times[i]; // Use times[i] for text
         select.appendChild(option);
+        console.log(times[i]);
     }
 }
