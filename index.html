@@ -24,16 +24,19 @@
         </center>
     </div>
 
-    <label for="teeTimeSelectStart">Start Time</label>
-    <select id="teeTimeSelectStart">
-    </select>
-    <label for="teeTimeSelectEnd">End Time</label>
-    <select id="teeTimeSelectEnd">
-    </select>
-    <label for="intervalSelector">Interval</label>
-    <select id="intervalSelector">
-    </select>
-    <button id="createButton" onclick="createTeeSheet()">Create</button>
+    <!-- tee sheet section -->
+    <div id="teeSheetCreation">
+        <label for="teeTimeSelectStart">Start Time</label>
+        <select id="teeTimeSelectStart">
+        </select>
+        <label for="teeTimeSelectEnd">End Time</label>
+        <select id="teeTimeSelectEnd">
+        </select>
+        <label for="intervalSelector">Interval</label>
+        <select id="intervalSelector">
+        </select>
+        <button id="createButton" onclick="createTeeSheet()">Create</button>
+    </div>
 
     <!-- tee time insert section -->
     <div id="insert">
@@ -57,10 +60,10 @@
                     <tr>
                         <th>Time</th>
                         <th>Booker</th>
-                        <th>Player 2</th>
-                        <th>Player 3</th>
-                        <th>Player 4</th>
-                        <th>Carts</th>
+                        <th>P2</th>
+                        <th>P3</th>
+                        <th>P4</th>
+                        <th>Cart(s)</th>
                     </tr>
                 </thead>
                 <tbody>

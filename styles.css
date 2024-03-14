@@ -7,6 +7,13 @@ body {
     margin: auto;
 }
 
+#teeSheetCreation {
+    background-color: lightgray;
+    margin: auto;
+    padding: 12px;
+    width: 82%;
+}
+
 #insert {
     background-color: lightgrey;
     margin: auto;
@@ -15,7 +22,7 @@ body {
 }
 
 #main {
-    column-gap: 5%;
+    column-gap: 6%;
     display: flex;
     margin: auto;
     width: 84%;
@@ -26,7 +33,7 @@ body {
     border-collapse: collapse;
     float: left;
     padding: 24px;
-    width: 70%;
+    width: 72%;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -43,7 +50,7 @@ body {
     border: 1px solid #4CAF50;
     float: right;
     padding: 24px;
-    width: 25%;
+    width: 24%;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
