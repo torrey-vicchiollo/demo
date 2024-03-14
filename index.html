@@ -9,7 +9,8 @@
     <script src="teeSheetManager.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fillTeeTimeSelect();
+            fillTeeTimeSelect("teeTimeSelectStart");
+            fillTeeTimeSelect("teeTimeSelectEnd");
         });
     </script>
 </head>
@@ -23,10 +24,10 @@
     </div>
 
     <label for="teeTimeSelectStart">Start Time</label>
-    <select id="teeTimeSelectStart" class="teeSheetMenu">
+    <select id="teeTimeSelectStart">
     </select>
     <label for="teeTimeSelectEnd">End Time</label>
-    <select id="teeTimeSelectEnd" class="teeSheetMenu">
+    <select id="teeTimeSelectEnd">
     </select>
     <button id="createButton" onclick="createTeeSheet()">Create</button>
 
