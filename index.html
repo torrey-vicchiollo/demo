@@ -7,12 +7,10 @@
     </link>
     <script src="teeTimeManager.js"></script>
     <script src="teeSheetManager.js"></script>
+    <script>window.onload = fillTeeTimeSelect();</script>
 </head>
 
 <body>
-    <script>
-        window.onload = fillTeeTimeSelect();
-    </script>
     <!-- header -->
     <div id="header">
         <center>
@@ -20,16 +18,12 @@
         </center>
     </div>
 
+    <label for="teeTimeSelect">Choose a time:</label>
+    <select id="teeTimeSelect">
+        <!-- Add more options here -->
 
-    <div id="createTeeSheet">
-
-        <label for="teeTimeSelect">Choose a time:</label>
-        <select id="teeTimeSelect">
-            <!-- Add more options here -->
-
-        </select>
-        <button id="createButton" onclick="createTeeSheet()">Create</button>
-    </div>
+    </select>
+    <button id="createButton" onclick="createTeeSheet()">Create</button>
 
     <!-- tee time insert section -->
     <div id="insert">

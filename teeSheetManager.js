@@ -21,7 +21,6 @@ function fillTeeTimeSelect() {
     let times = createTimeInterval(); // Call the function to get the times array
     let select = document.getElementById("teeTimeSelect");
     for (let i = 0; i < times.length; i++) {
-        console.log(times[i]); //this needs to move here
         let option = document.createElement("option");
         option.value = times[i]; // Use times[i] for value
         option.text = times[i]; // Use times[i] for text
