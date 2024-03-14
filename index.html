@@ -26,6 +26,7 @@
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
+        <button id="createButton" onclick="createTeeSheet()">Create</button>
         <label for="teeTimeSelectStart">Start Time</label>
         <select id="teeTimeSelectStart">
         </select>
@@ -35,17 +36,19 @@
         <label for="intervalSelector">Interval</label>
         <select id="intervalSelector">
         </select>
-        <button id="createButton" onclick="createTeeSheet()">Create</button>
+
     </div>
+
+    <br>
 
     <!-- tee time insert section -->
     <div id="insert">
+        <button id="insertButton" onclick="addTeeTime()">Book</button>
         <input id="timeInput" type="text" size="17" placeholder="Time">
         <input id="player1" type="text" size="17" placeholder="Player 1">
         <input id="player2" type="text" size="17" placeholder="Player 2">
         <input id="player3" type="text" size="17" placeholder="Player 3">
         <input id="player4" type="text" size="17" placeholder="Player 4">
-        <button id="insertButton" onclick="addTeeTime()">Add</button>
     </div>
 
     <br>
