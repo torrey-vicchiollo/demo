@@ -46,17 +46,15 @@ th {
 #headerTitle {
     color: white;
     font-size: 30px;
-    padding-left: 60px;
+    padding-left: 30px;
 }
 
 #teeTableTitle {
     font-size: 30px;
-    padding-left: 60px;
 }
 
 #notesTitle {
     font-size: 30px;
-    padding-left: 60px;
 }
 
 #notesBody {
