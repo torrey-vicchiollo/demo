@@ -16,3 +16,15 @@ function createTimeInterval(){
     }
     return times; // Corrected return variable
 }
+
+function fillTeeTimeSelect(){
+    let times = createTimeInterval;
+    let select = document.getElementById("teeTimeSelect");
+    for(let i = 0; i < times.length; i++){
+        let option = document.createElement("option");
+        option.value = time;
+        option.text = time;
+        select.appendChild(option);
+
+    }
+}
