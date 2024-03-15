@@ -1,8 +1,8 @@
 /* 
-WHITE - #FFFFFF
-GREY(HONEYDEW) - #DBEDE1
-GREEN - #71F09F
-BLACK(OXFORD BLUE) - #041025
+WHITE -                 #FFFFFF
+GREY (HONEYDEW) -       #DBEDE1
+GREEN (EMERALD) -       #59DF8B
+BLACK (OXFORD BLUE) -   #041025
 */
 
 * {
@@ -23,15 +23,19 @@ button {
 select {
     margin-right: 36px;
     border: none;
-    border-bottom: 1px solid #71F09F;
+    border-bottom: 1px solid #59DF8B;
     color: #041025;
 }
 
-
+label {
+    color: #041025;
+    font-size: 12px;
+    font-style: italic;
+}
 
 /* header section */
 #header {
-    background-color: #71F09F;
+    background-color: #59DF8B;
     padding: 6px;
     width: 100%;
 }
@@ -58,7 +62,7 @@ select {
 }
 
 #createButton:hover {
-    background-color: #71F09F;
+    background-color: #59DF8B;
     color: white;
 }
 
@@ -79,14 +83,14 @@ select {
 }
 
 #insertButton:hover {
-    background-color: #71F09F;
+    background-color: #59DF8B;
     color: white;
 }
 
 #bookerInput {
     margin-right: 36px;
     border: none;
-    border-bottom: 1px solid #71F09F;
+    border-bottom: 1px solid #59DF8B;
     color: #041025;
 }
 
@@ -104,7 +108,7 @@ select {
 
 /* tee table section */
 #teeTable {
-    border: 1px solid #71F09F;
+    border: 1px solid #59DF8B;
     border-collapse: collapse;
     float: left;
     padding: 24px;
@@ -127,7 +131,7 @@ th, td {
 }
 
 th {
-    background-color: #71F09F;
+    background-color: #59DF8B;
     color: white;
 }
 
@@ -136,7 +140,7 @@ th {
 /* notes section */
 #notes {
     background-color: white;
-    border: 1px solid #71F09F;
+    border: 1px solid #59DF8B;
     float: right;
     padding: 24px;
     width: 30%;
@@ -150,8 +154,8 @@ th {
 
 #notesBody {
     color: #DBEDE1;
-    font-size: 12px;
-    font-style: italic;
+    font-size: 16px;
+    font-style: bold, italic;
 }
 
 #notesTextArea {
@@ -166,6 +170,6 @@ th {
 }
 
 #notesButton:hover{
-    background-color: #71F09F;
+    background-color: #59DF8B;
     color: white;
 }
