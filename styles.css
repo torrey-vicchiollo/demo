@@ -40,9 +40,9 @@ label {
     width: 100%;
 }
 
-#headerTitle {
-    color: white;
-    font-size: 18px;
+#headerLogo {
+    height: 36px;
+    width: 96px;
 }
 
 
