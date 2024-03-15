@@ -30,15 +30,11 @@
     <div id="teeSheetCreation">
         <button id="createButton" onclick="createTeeSheet()">Create</button>
         <label for="teeTimeSelectStart">Start Time</label>
-        <select id="teeTimeSelectStart">
-        </select>
+        <select id="teeTimeSelectStart"></select>
         <label for="teeTimeSelectEnd">End Time</label>
-        <select id="teeTimeSelectEnd">
-        </select>
+        <select id="teeTimeSelectEnd"></select>
         <label for="intervalSelector">Interval</label>
-        <select id="intervalSelector">
-        </select>
-
+        <select id="intervalSelector"></select>
     </div>
 
     <br>
@@ -46,11 +42,14 @@
     <!-- tee time insert section -->
     <div id="insert">
         <button id="insertButton" onclick="addTeeTime()">Book</button>
-        <input id="timeInput" type="text" size="17" placeholder="Time">
-        <input id="player1" type="text" size="17" placeholder="Player 1">
-        <input id="player2" type="text" size="17" placeholder="Player 2">
-        <input id="player3" type="text" size="17" placeholder="Player 3">
-        <input id="player4" type="text" size="17" placeholder="Player 4">
+        <label for="timeInput">Time</label>
+        <select id="timeInput"></select>
+        <label for="bookerInput">Booker</label>
+        <input id="bookerInput" type="text" size="18" placeholder="Last, First">
+        <label for="golferCountInput">Golfer(s)</label>
+        <select id="golferCountInput"></select>
+        <label for="cartCountInput">Cart(s)</label>
+        <select id="cartCountInput"></select>
     </div>
 
     <br>
