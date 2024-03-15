@@ -42,7 +42,8 @@ label {
 
 #headerLogo {
     height: 36px;
-    width: 96px;
+    width: 90px;
+    padding-left: 12px;
 }
 
 
