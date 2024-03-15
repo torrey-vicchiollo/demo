@@ -9,6 +9,10 @@ BLACK (OXFORD BLUE) -   #041025
     font-family: 'Trebuchet MS', sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: #FFFFFF;
     margin: auto;
@@ -42,8 +46,8 @@ label {
 
 #headerLogo {
     height: 36px;
-    width: 90px;
-    padding-left: 12px;
+    width: 84px;
+    padding-left: 24px;
 }
 
 
