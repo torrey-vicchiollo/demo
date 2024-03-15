@@ -133,3 +133,9 @@ button {
     background-color: #0d4b0f;
     color: white;
 }
+
+#bookerInput {
+    margin-right: 36px;
+    border: none;
+    border-bottom: 1px solid #0d4b0f;
+}
