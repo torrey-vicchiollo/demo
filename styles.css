@@ -1,32 +1,98 @@
+/* 
+WHITE - #FFFFFF
+GREY(HONEYDEW) - #DBEDE1
+GREEN - #71F09F
+BLACK(OXFORD BLUE) - #041025
+*/
+
 * {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
     margin: auto;
 }
 
-#teeSheetCreation {
-    background-color: lightgray;
-    margin: auto;
+button {
+    border: none;
     padding: 12px;
-    width: 82%;
+    font-size: 12px;
 }
 
 select {
     margin-right: 36px;
     border: none;
-    border-bottom: 1px solid #0d4b0f;
+    border-bottom: 1px solid #71F09F;
+    color: #041025;
 }
 
-#insert {
-    background-color: lightgrey;
+
+
+/* header section */
+#header {
+    background-color: #71F09F;
+    padding: 6px;
+    width: 100%;
+}
+
+#headerTitle {
+    color: white;
+    font-size: 18px;
+}
+
+
+
+/* tee sheet creation section */
+#teeSheetCreation {
+    background-color: #DBEDE1;
     margin: auto;
     padding: 12px;
     width: 82%;
 }
 
+#createButton {
+    background-color: white;
+    color: #041025;
+    margin-right: 36px;
+}
+
+#createButton:hover {
+    background-color: #71F09F;
+    color: white;
+}
+
+
+
+/* book tee time section */
+#insert {
+    background-color: #DBEDE1;
+    margin: auto;
+    padding: 12px;
+    width: 82%;
+}
+
+#insertButton {
+    background-color: white;
+    color: #041025;
+    margin-right: 36px;
+}
+
+#insertButton:hover {
+    background-color: #71F09F;
+    color: white;
+}
+
+#bookerInput {
+    margin-right: 36px;
+    border: none;
+    border-bottom: 1px solid #71F09F;
+    color: #041025;
+}
+
+
+
+/* main section */
 #main {
     column-gap: 24px;
     display: flex;
@@ -34,8 +100,11 @@ select {
     width: 84%;
 }
 
+
+
+/* tee table section */
 #teeTable {
-    border: 1px solid #0d4b0f;
+    border: 1px solid #71F09F;
     border-collapse: collapse;
     float: left;
     padding: 24px;
@@ -43,13 +112,9 @@ select {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
-#notes {
-    background-color: white;
-    border: 1px solid #0d4b0f;
-    float: right;
-    padding: 24px;
-    width: 30%;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+#teeTableTitle {
+    color: #041025;
+    font-size: 24px;
 }
 
 th, td {
@@ -62,80 +127,45 @@ th, td {
 }
 
 th {
-    background-color: #0d4b0f;
+    background-color: #71F09F;
     color: white;
 }
 
-#headerTitle {
-    color: white;
-    font-size: 18px;
-}
 
-#teeTableTitle {
-    font-size: 24px;
+
+/* notes section */
+#notes {
+    background-color: white;
+    border: 1px solid #71F09F;
+    float: right;
+    padding: 24px;
+    width: 30%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
 #notesTitle {
+    color: #041025;
     font-size: 24px;
 }
 
 #notesBody {
-    color: gray;
-    font-style: italic;
+    color: #DBEDE1;
     font-size: 12px;
+    font-style: italic;
 }
 
 #notesTextArea {
+    color: #041025;
+    font-size: 12px;
     resize: none;
-    font-size: 12px;
-}
-
-#header {
-    background-color: #0d4b0f;
-    padding: 6px;
-    width: 100%;
-}
-
-button {
-    border: none;
-    padding: 12px;
-    font-size: 12px;
-}
-
-#createButton {
-    background-color: white;
-    color: black;
-    margin-right: 36px;
-}
-
-#createButton:hover {
-    background-color: #0d4b0f;
-    color: white;
-}
-
-#insertButton {
-    background-color: white;
-    color: black;
-    margin-right: 36px;
-}
-
-#insertButton:hover {
-    background-color: #0d4b0f;
-    color: white;
 }
 
 #notesButton{
-    background-color: lightgray;
-    color: black;
+    background-color: #DBEDE1;
+    color: #041025;
 }
 
 #notesButton:hover{
-    background-color: #0d4b0f;
+    background-color: #71F09F;
     color: white;
-}
-
-#bookerInput {
-    margin-right: 36px;
-    border: none;
-    border-bottom: 1px solid #0d4b0f;
 }
