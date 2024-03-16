@@ -180,8 +180,9 @@ th {
     border-radius: 50%;
     color: #041025;
     font-weight: bold;
-    height: 24px;
-    width: 24px;
+    padding: 6px;
+    height: 36px;
+    width: 36px;
     
 }
 
