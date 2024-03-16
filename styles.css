@@ -45,10 +45,11 @@ label {
     width: 100%;
 }
 
-#headerLogo {
-    height: 36px;
-    width: 84px;
-    padding-left: 24px;
+#headerTitle {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    padding-left: 108
 }
 
 
@@ -128,7 +129,7 @@ label {
 
 /* tee table section */
 #teeTable {
-    border: 1px solid #04AA6D;
+    border: 2px solid #04AA6D;
     border-collapse: collapse;
     float: left;
     padding: 24px;
@@ -162,7 +163,7 @@ th {
 /* notes section */
 #notes {
     background-color: white;
-    border: 1px solid #04AA6D;
+    border: 2px solid #04AA6D;
     float: right;
     padding: 24px;
     width: 30%;
