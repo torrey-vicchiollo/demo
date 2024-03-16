@@ -48,7 +48,7 @@ label {
     font-size: 30px;
     color: white;
     font-weight: bold;
-    padding-left: 132px;
+    padding-left: 126px;
     padding-bottom: 12px;
     padding-top: 12px;
     font-family: Garamond, serif;
@@ -144,6 +144,7 @@ label {
     font-size: 30px;
     font-family: Garamond, serif;
     font-weight: bold;
+    padding-top: 24px;
 }
 
 th, td {
@@ -177,6 +178,7 @@ th {
     font-size: 30px;
     font-family: Garamond, serif;
     font-weight: bold;
+    padding-top: 24px;
 }
 
 #notesBody {
