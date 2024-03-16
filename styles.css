@@ -41,7 +41,6 @@ label {
 /* header section */
 #header {
     background-color: #04AA6D;
-    padding: 6px;
     width: 100%;
 }
 
@@ -49,7 +48,10 @@ label {
     font-size: 30px;
     color: white;
     font-weight: bold;
-    padding-left: 108
+    padding-left: 120px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    font-family: Garamond, serif;
 }
 
 
