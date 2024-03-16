@@ -2,6 +2,7 @@
 
 <head>
 
+    <meta charset="UTF-8">
     <title>Launch Angle Demo</title>
     <link rel="stylesheet" href="styles.css">
     </link>
@@ -26,7 +27,7 @@
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
-        <button id="createButton" onclick="createTeeSheet()">Create</button>
+        <button id="createButton" onclick="createTeeSheet()"><b>+</b></button>
         <label for="teeTimeSelectStart">Start Time</label>
         <select id="teeTimeSelectStart"></select>
         <label for="teeTimeSelectEnd">End Time</label>
@@ -39,7 +40,7 @@
 
     <!-- tee time insert section -->
     <div id="insert">
-        <button id="insertButton" onclick="addTeeTime()">Book</button>
+        <button id="insertButton" onclick="addTeeTime()"><b>+</b></button>
         <label for="timeInput">Tee Time</label>
         <select id="timeInput"></select>
         <label for="bookerInput">Booker</label>
@@ -81,7 +82,7 @@
             <form id="notesForm">
                 <textarea id="notesTextArea" rows="12" cols="51" placeholder="Enter notes here..."></textarea>
             </form>
-            <button id="notesButton">＋</button>
+            <button id="notesButton"><b>+</b></button>
         </div>
 
     </div>
