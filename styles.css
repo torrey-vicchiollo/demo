@@ -176,7 +176,7 @@ th {
 
 #notesButton{
     background-color: white;
-    border: 3px solid #041025;
+    border: 2px solid #041025;
     border-radius: 50%;
     color: #041025;
     font-size: 12px;
@@ -184,7 +184,7 @@ th {
     padding: 6px;
     height: 36px;
     width: 36px;
-    transition: 0.24s
+    transition: 0.12s
 }
 
 #notesButton:hover{
