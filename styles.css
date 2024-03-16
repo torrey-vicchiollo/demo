@@ -68,7 +68,7 @@ label {
 }
 
 #createButton:hover {
-    background-color: #59DF8B;
+    background-color: #041025;
     color: white;
 }
 
@@ -85,11 +85,11 @@ label {
 #insertButton {
     background-color: white;
     color: #041025;
-    margin-right: 36px;
+    margin-right: 48px;
 }
 
 #insertButton:hover {
-    background-color: #59DF8B;
+    background-color: #041025;
     color: white;
 }
 
@@ -126,11 +126,11 @@ label {
     color: #041025;
     font-size: 24px;
     font-family: Garamond, serif;
-    font-style: bold;
+    font-weight: bold;
 }
 
 th, td {
-    font-size: 12px;
+    font-size: 16px;
     padding-left: 48px;
     padding-right: 48px;
     padding-top: 12px;
@@ -159,7 +159,7 @@ th {
     color: #041025;
     font-size: 24px;
     font-family: Garamond, serif;
-    font-style: bold;
+    font-weight: bold;
 }
 
 #notesBody {
@@ -180,6 +180,6 @@ th {
 }
 
 #notesButton:hover{
-    background-color: #59DF8B;
+    background-color: #041025;
     color: white;
 }
