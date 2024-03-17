@@ -102,3 +102,24 @@ function fillInIntervals() {
         select.appendChild(option);
     }
 }
+
+function fillInCartCount() {
+    let select = document.getElementById("cartCountInput");
+    for (let i = 0; i < 2; i++) {
+        document.createElement("option");
+        option.value = i + 1;
+        option.text = i + 1;
+        select.appendChild(option);
+    }
+
+}
+
+function filInPlayerCount(){
+    let select = document.getElementById("golferCountInput");
+    for (let i = 0; i < 4; i++) {
+        document.createElement("option");
+        option.value = i + 1;
+        option.text = i + 1;
+        select.appendChild(option);
+    }
+}
