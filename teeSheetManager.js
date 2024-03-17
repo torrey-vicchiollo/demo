@@ -5,6 +5,7 @@ function createTeeSheet() {
     let endTime = document.getElementById("teeTimeSelectEnd").value;
     let interval = parseInt(document.getElementById("intervalSelector").value);
     let teeSheet = document.getElementById("teeTimesTable");
+    let timeInput = document.getElementById("timeInput");
     console.log(startTime + " " + endTime + " " + interval);
 
     // Check if start time is greater than or equal to end time
@@ -21,16 +22,31 @@ function createTeeSheet() {
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
         const newCell = document.createElement("td");
+        const newTeeTimeSelect = document.createElement("option");
         newCell.textContent = currentTime; // Add current time to the cell
+        newTeeTimeSelect.value = currentTime;
+        newTeeTimeSelect.text = currentTime;
         newRow.appendChild(newCell); // Append cell to the row
         teeSheet.appendChild(newRow); // Append row to the table
 
         // Increment currentTime by the interval (in minutes)
+        // This line splits the currentTime string into an array of two strings - one for hours and one for minutes, using the colon (:) 
+        // as the delimiter. Then, it uses the map(Number) function to convert each string element to a number. The resulting array is destructured 
+        // into two variables: hours and minutes.
         let [hours, minutes] = currentTime.split(":").map(Number);
         minutes += interval;
+        //  Here, Math.floor(minutes / 60) calculates the number of hours to add based on the incremented minutes. 
+        // This calculation ensures that if the added minutes exceed 60, they are converted into hours. The result is added 
+        // to the current value of hours.
         hours += Math.floor(minutes / 60);
+        // This line calculates the remaining minutes after converting any extra minutes into hours. % is the modulus operator, 
+        // which returns the remainder of dividing the left-hand operand by the right-hand operand. In this case, it ensures that minutes does not exceed 60.
         minutes %= 60;
+        // this line constructs a new currentTime string using template literals (${}) to combine hours and minutes 
+        // as strings. The padStart(2, "0") method ensures that both hours and minutes are represented as two-digit strings, 
+        // padding with a leading zero if necessary.
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+
     }
 }
 
