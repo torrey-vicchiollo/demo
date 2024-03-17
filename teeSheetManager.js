@@ -1,5 +1,7 @@
 
-
+<script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+</script>
 function createTeeSheet() {
     let startTime = document.getElementById("teeTimeSelectStart").value;
     let endTime = document.getElementById("teeTimeSelectEnd").value;

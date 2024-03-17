@@ -1,8 +1,28 @@
-function addTeeTime(){
-    var time = document.getElementById("timeInput").value;
-    var player1 = document.getElementById("player1").value; // Corrected IDs
-    var player2 = document.getElementById("player2").value;
-    var player3 = document.getElementById("player3").value;
-    var player4 = document.getElementById("player4").value;
+<script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+</script>
+
+function addTeeTime() {
+    let teeSheet = document.getElementById("teeTimesTable");
+    let time = document.getElementById("timeInput").value;
+    let booker = document.getElementById("bookerInput").value;
+    let playerCount = document.getElementById("golferCountInput").value;
+    let cartCount = document.getElementById("cartCountInput").value;
+
+    // Iterate through each row of the table
+    for (let i = 0; i < teeSheet.rows.length; i++) {
+        const row = teeSheet.rows[i];
+
+        // Check if the time in the first cell matches the input time
+        if (row.cells[0].textContent === time) {
+            // Fill the row with the provided information
+            row.cells[1].textContent = booker;
+            row.cells[2].textContent = playerCount;
+            row.cells[5].textContent = cartCount;
+            return; // Exit the function after filling the row
+        }
+    }
+
+
 
 }
