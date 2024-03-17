@@ -12,11 +12,9 @@ class teeTime {
         this.player4 = player4
 
     }
-
     getTime() {
         return time;
     }
-
     getPlayer1() {
         return player1;
     }
@@ -29,11 +27,9 @@ class teeTime {
     getPlayer4() {
         return player4;
     }
-
     setTime(time) {
         this.time = time;
     }
-
     setPlayer1(player1) {
         this.player1 = player1;
     }
