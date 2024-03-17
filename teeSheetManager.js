@@ -4,7 +4,7 @@ function createTeeSheet() {
     let startTime = document.getElementById("teeTimeSelectStart").value;
     let endTime = document.getElementById("teeTimeSelectEnd").value;
     let interval = parseInt(document.getElementById("intervalSelector").value);
-    let teeSheet = document.getElementById("teeTimesTable")
+    let teeSheet = document.getElementById("teeTimesTable");
     console.log(startTime + " " + endTime + " " + interval);
 
     // Check if start time is greater than or equal to end time
@@ -15,6 +15,8 @@ function createTeeSheet() {
 
     const amountOfTimes = calcAmountOfTimes(startTime, endTime, interval);
     console.log("Number of times: " + amountOfTimes);
+
+    let currentTime = startTime; // Initialize currentTime to startTime
 
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
