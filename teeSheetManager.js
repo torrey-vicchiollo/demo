@@ -114,7 +114,7 @@ function fillInCartCount() {
 
 }
 
-function filInPlayerCount() {
+function fillInPlayerCount() {
     let select = document.getElementById("golferCountInput");
     for (let i = 0; i < 4; i++) {
         let option = document.createElement("option");
