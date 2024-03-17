@@ -107,7 +107,7 @@ function fillInCartCount() {
     let select = document.getElementById("cartCountInput");
     alert("cartCount");
     for (let i = 0; i < 2; i++) {
-        document.createElement("option");
+        let option = document.createElement("option");
         option.value = i + 1;
         option.text = i + 1;
         select.appendChild(option);
@@ -119,7 +119,7 @@ function filInPlayerCount() {
     let select = document.getElementById("golferCountInput");
     alert("playerCount");
     for (let i = 0; i < 4; i++) {
-        document.createElement("option");
+        let option = document.createElement("option");
         option.value = i + 1;
         option.text = i + 1;
         select.appendChild(option);
