@@ -105,6 +105,7 @@ function fillInIntervals() {
 
 function fillInCartCount() {
     let select = document.getElementById("cartCountInput");
+    alert("cartCount");
     for (let i = 0; i < 2; i++) {
         document.createElement("option");
         option.value = i + 1;
@@ -114,8 +115,9 @@ function fillInCartCount() {
 
 }
 
-function filInPlayerCount(){
+function filInPlayerCount() {
     let select = document.getElementById("golferCountInput");
+    alert("playerCount");
     for (let i = 0; i < 4; i++) {
         document.createElement("option");
         option.value = i + 1;
