@@ -26,7 +26,7 @@ function createTeeSheet() {
         newTeeTimeSelect.value = currentTime;
         newTeeTimeSelect.text = currentTime;
         timeInput.append(newTeeTimeSelect);
-        for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
             newRow.appendChild(newCell);// Append cell to the row
         }
 
