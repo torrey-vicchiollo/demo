@@ -12,6 +12,8 @@ function addTeeTime() {
 
         // Check if the time in the first cell matches the input time
         if (row.cells[0].textContent === time) {
+            alert("we got here");
+            console.log(time + " " + booker + " " + playerCount +" " + cartCount);
             // Fill the row with the provided information
             row.cells[1].textContent = booker;
             row.cells[2].textContent = playerCount;
