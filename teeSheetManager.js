@@ -26,7 +26,10 @@ function createTeeSheet() {
         newTeeTimeSelect.value = currentTime;
         newTeeTimeSelect.text = currentTime;
         timeInput.append(newTeeTimeSelect);
-        newRow.appendChild(newCell); // Append cell to the row
+        for (let i = 0; i < 4; i++) {
+            newRow.appendChild(newCell);// Append cell to the row
+        }
+
         teeSheet.appendChild(newRow); // Append row to the table
 
         // Increment currentTime by the interval (in minutes)

@@ -11,13 +11,26 @@ function addTeeTime() {
         const row = teeSheet.rows[i];
 
         // Check if the time in the first cell matches the input time
-        if (row.cells[0].textContent === time) {
-            console.log(time + " " + booker + " " + playerCount +" " + cartCount);
-            // Fill the row with the provided information
-            row.cells[0].textContent = booker;
-            row.cells[2].textContent = playerCount;
-            row.cells[5].textContent = cartCount;
-            return; // Exit the function after filling the row
+        for (let i = 0; i < 3; i++) {
+            if (row.cells[0].textContent === time) {
+
+                console.log(time + " " + booker + " " + playerCount + " " + cartCount);
+                // Fill the row with the provided information
+                // we need to create row.cells for eachjh line and se them to empty text so they can be filled
+                if(row.cells[i].textContent = ''){
+                
+                    if(playerCount == 1){
+                        row.cells[i].textContent = booker + ' ' + playerCount
+                    }
+                    else if(playerCount < 1){
+                        row.cells[i].textContent = booker
+                        for(let j = 0 ; j < playerCount - 1 ; j++){
+                            row.cells[i + 1].textContent = 'x'
+                        }
+                    }
+                }
+                return; // Exit the function after filling the row
+            }
         }
     }
 
