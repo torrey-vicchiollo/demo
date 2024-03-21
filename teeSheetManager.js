@@ -17,20 +17,22 @@ function createTeeSheet() {
     console.log("Number of times: " + amountOfTimes);
 
     let currentTime = startTime; // Initialize currentTime to startTime
-
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
-        const newCell = document.createElement("td");
-        const newTeeTimeSelect = document.createElement("option");
-        newCell.textContent = currentTime; // Add current time to the cell
-        newTeeTimeSelect.value = currentTime;
-        newTeeTimeSelect.text = currentTime;
-        timeInput.append(newTeeTimeSelect);
+        
+        // Create and add time cell
+        const newTimeCell = document.createElement("td");
+        newTimeCell.textContent = currentTime; // Add current time to the cell
+        newRow.appendChild(newTimeCell);
+
+        // Create and add empty cells for other positions
         for (let j = 0; j < 4; j++) {
-            newRow.appendChild(newCell);// Append cell to the row
+            const newEmptyCell = document.createElement("td");
+            newRow.appendChild(newEmptyCell);
         }
 
-        teeSheet.appendChild(newRow); // Append row to the table
+        // Append the row to the table
+        teeSheet.appendChild(newRow);
 
         // Increment currentTime by the interval (in minutes)
         // This line splits the currentTime string into an array of two strings - one for hours and one for minutes, using the colon (:) 
