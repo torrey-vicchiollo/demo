@@ -28,7 +28,6 @@ function createTeeSheet() {
         for (let j = 0; j < 4; j++) {
             newRow.appendChild(newCell);// Append cell to the row
             const newEmptyCell = document.createElement("td");
-            newEmptyCell.textContent("rocketLauncher");
         }
 
         teeSheet.appendChild(newRow); // Append row to the table
