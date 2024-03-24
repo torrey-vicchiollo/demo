@@ -134,6 +134,7 @@ label {
     border: 1px solid #04AA6D;
     border-collapse: collapse;
     float: left;
+    overflow: auto;
     padding: 24px;
     width: 70%;
 }
