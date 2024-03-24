@@ -3,14 +3,14 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>demo</title>
-    <link rel="stylesheet" href="styles.css">
-    </link>
+    <title>launch angle</title>
+    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <script src="teeTimeManager.js"></script>
     <script src="teeSheetManager.js"></script>
     <script src="notes.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             fillTeeTimeSelect("teeTimeSelectStart");
             fillTeeTimeSelect("teeTimeSelectEnd");
             fillInIntervals();
@@ -23,7 +23,7 @@
 <body>
     <!-- header -->
     <div id="header">
-        <p id="headerTitle">launchAngle</p>
+        <p id="headerTitle">launch angle</p>
     </div>
 
     <!-- tee sheet section -->
@@ -83,7 +83,7 @@
             <p id="notesTitle">today's notes</p>
             <p id="notesBody"></p>
             <form id="notesForm">
-                <textarea id="notesTextArea" rows="12" cols="42" placeholder="enter  daily notes here"></textarea>
+                <textarea id="notesTextArea" rows="12" cols="48" placeholder="enter daily notes here"></textarea>
             </form>
             <button id="notesButton" onclick="addNotes()"><b>+</b></button>
         </div>
