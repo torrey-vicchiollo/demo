@@ -113,7 +113,7 @@ label {
 #bookerInput {
     margin-right: 36px;
     border: none;
-    border-bottom: 1px solid #04AA6D;
+    border-bottom: 2px solid #04AA6D;
     color: #041025;
 }
 
@@ -169,7 +169,6 @@ th {
     float: right;
     padding: 24px;
     width: 30%;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
 }
 
 #notesTitle {
@@ -180,7 +179,7 @@ th {
 }
 
 #notesBody {
-    color: #DBEDE1;
+    color: #041025;
     font-size: 16px;
     font-style: bold, italic;
 }
