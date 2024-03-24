@@ -136,6 +136,7 @@ label {
     float: left;
     padding: 24px;
     width: 70%;
+    overflow: auto;
 }
 
 #teeTableTitle {
@@ -159,9 +160,6 @@ th {
     color: white;
 }
 
-tr { 
-    overflow: auto;
-}
 
 
 /* notes section */
