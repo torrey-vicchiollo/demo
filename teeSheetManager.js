@@ -19,43 +19,56 @@ function createTeeSheet() {
     let currentTime = startTime; // Initialize currentTime to startTime
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
-        
-        // Create and append the first cell with time interval values
-        const timeCell = document.createElement("td");
-        timeCell.textContent = currentTime;
-        newRow.appendChild(timeCell);
-        
-        // Create and append cells for other columns
-        for (let j = 0; j < 5; j++) {
-            const newCell = document.createElement("td");
-            // Fill the cells with placeholder text
-            newCell.textContent = 'X';
-            newRow.appendChild(newCell);
+        const newCell = document.createElement("td");
+        const newTeeTimeSelect = document.createElement("option");
+        newCell.textContent = currentTime; // Add current time to the cell
+        newTeeTimeSelect.value = currentTime;
+        newTeeTimeSelect.text = currentTime;
+        timeInput.append(newTeeTimeSelect);
+        for (let j = 0; j < 4; j++) {
+            newRow.appendChild(newCell);// Append cell to the row
+            const newEmptyCell = document.createElement("td");
         }
 
-        // Append the row to the table
-        teeSheet.appendChild(newRow);
+        teeSheet.appendChild(newRow); // Append row to the table
 
         // Increment currentTime by the interval (in minutes)
+        // This line splits the currentTime string into an array of two strings - one for hours and one for minutes, using the colon (:) 
+        // as the delimiter. Then, it uses the map(Number) function to convert each string element to a number. The resulting array is destructured 
+        // into two variables: hours and minutes.
         let [hours, minutes] = currentTime.split(":").map(Number);
         minutes += interval;
+        //  Here, Math.floor(minutes / 60) calculates the number of hours to add based on the incremented minutes. 
+        // This calculation ensures that if the added minutes exceed 60, they are converted into hours. The result is added 
+        // to the current value of hours.
         hours += Math.floor(minutes / 60);
+        // This line calculates the remaining minutes after converting any extra minutes into hours. % is the modulus operator, 
+        // which returns the remainder of dividing the left-hand operand by the right-hand operand. In this case, it ensures that minutes does not exceed 60.
         minutes %= 60;
+        // this line constructs a new currentTime string using template literals (${}) to combine hours and minutes 
+        // as strings. The padStart(2, "0") method ensures that both hours and minutes are represented as two-digit strings, 
+        // padding with a leading zero if necessary.
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+
     }
 }
 
-// New function to populate interval selector based on the time interval selected
-function fillInIntervals() {
-    let times = createTimeInterval();
-    let select = document.getElementById("intervalSelector");
-    select.innerHTML = ''; // Clear existing options
-    for (let i = 0; i < times.length; i++) {
-        let option = document.createElement("option");
-        option.value = times[i]; // Use times[i] for both value and text
-        option.text = times[i];
-        select.appendChild(option);
-    }
+
+function calcAmountOfTimes(sTime, eTime, interval) {
+
+    // Convert start and end times to minutes since midnight
+    const startTime = parseInt(sTime.split(":")[0]) * 60 + parseInt(sTime.split(":")[1]);
+    const endTime = parseInt(eTime.split(":")[0]) * 60 + parseInt(eTime.split(":")[1]);
+
+    // Calculate time difference
+    const timeDifference = endTime - startTime;
+
+    // Calculate number of intervals
+    const numberOfIntervals = Math.ceil(timeDifference / interval);
+
+    return numberOfIntervals;
+
+
 }
 
 function createTimeInterval() {
