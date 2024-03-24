@@ -8,6 +8,7 @@
     </link>
     <script src="teeTimeManager.js"></script>
     <script src="teeSheetManager.js"></script>
+    <script src="notes.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fillTeeTimeSelect("teeTimeSelectStart");
@@ -82,7 +83,7 @@
             <form id="notesForm">
                 <textarea id="notesTextArea" rows="12" cols="52" placeholder="Enter notes here..."></textarea>
             </form>
-            <button id="notesButton"><b>+</b></button>
+            <button id="notesButton" onclick="addNotes()"><b>+</b></button>
         </div>
 
     </div>
