@@ -21,7 +21,7 @@ function addTeeTime() {
             // Fill the row with the provided information
             for (let j = 1; j <= playerCount; j++) {
                 console.log("in the loop");
-                if (row.cells[j].textContent.trim() === '') {
+                if (row.cells[j].textContent.trim() === 'X') {
                     console.log("found this text content");
                     row.cells[j].textContent = booker + ' ' + j;
                 }
