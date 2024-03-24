@@ -152,7 +152,6 @@ th, td {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    overflow: auto;
 }
 
 th {
@@ -160,6 +159,9 @@ th {
     color: white;
 }
 
+tr { 
+    overflow: auto;
+}
 
 
 /* notes section */
