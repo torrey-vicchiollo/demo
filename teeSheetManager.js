@@ -19,15 +19,21 @@ function createTeeSheet() {
     let currentTime = startTime; // Initialize currentTime to startTime
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
-        const newCell = document.createElement("td");
-        const newTeeTimeSelect = document.createElement("option");
-        newCell.textContent = currentTime; // Add current time to the cell
-        newTeeTimeSelect.value = currentTime;
-        newTeeTimeSelect.text = currentTime;
-        timeInput.append(newTeeTimeSelect);
-        for (let j = 0; j < 4; j++) {
-            newRow.appendChild(newCell);// Append cell to the row
-            const newEmptyCell = document.createElement("td");
+        for (let j = 0; j < 6; j++) {
+            const newCell = document.createElement("td");
+            if (j == 0) {
+                const newTeeTimeSelect = document.createElement("option");
+                newCell.textContent = currentTime; // Add current time to the cell
+                newTeeTimeSelect.value = currentTime;
+                newTeeTimeSelect.text = currentTime;
+                timeInput.append(newTeeTimeSelect);
+            }
+            else {
+                const newCell = document.createElement("td");
+                // Fill the cells with placeholder text
+                newCell.textContent = 'X';
+                newRow.appendChild(newCell);
+            }
         }
 
         teeSheet.appendChild(newRow); // Append row to the table
