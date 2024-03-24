@@ -22,6 +22,7 @@ function createTeeSheet() {
         // Create and append the first cell with time interval values
         const timeCell = document.createElement("td");
         timeCell.textContent = currentTime;
+        fillTimeIntervals(currentTime);
         newRow.appendChild(timeCell);
 
         for (let j = 1; j < 6; j++) {
@@ -52,6 +53,13 @@ function createTeeSheet() {
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
 
     }
+}
+
+function fillTimeIntervals(time) {
+    let option = document.createElement("option");
+    let intervalSelector = document.getElementById("intervalSelector");
+    option.value = time;
+    option.text = time;
 }
 
 
