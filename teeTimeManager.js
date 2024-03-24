@@ -20,19 +20,14 @@ function addTeeTime() {
             
             // Fill the row with the provided information
             for (let j = 1; j <= playerCount; j++) {
+                console.log("in the loop");
                 if (row.cells[j].textContent.trim() === '') {
+                    console.log("found this text content");
                     row.cells[j].textContent = booker + ' ' + j;
                 }
             }
 
             return; // Exit the function after filling the row
         }
-    }
-
-    // If the time doesn't exist, create a new row
-    let newRow = teeSheet.insertRow(-1); // -1 appends at the end
-    newRow.insertCell(0).textContent = time;
-    for (let j = 1; j <= playerCount; j++) {
-        newRow.insertCell(j).textContent = booker + ' ' + j;
     }
 }
