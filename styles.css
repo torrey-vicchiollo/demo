@@ -184,8 +184,13 @@ th {
 }
 
 #notesTextArea {
+    background-color: #DBEDE1;
+    border: none;
+    border-bottom: 2px solid #04AA6D;
     color: #041025;
-    font-size: 12px;
+    font-size: 16px;
+    font-style: italic;
+    padding: 12px;
     resize: none;
 }
 
