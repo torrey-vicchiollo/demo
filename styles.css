@@ -169,6 +169,7 @@ th {
     padding: 24px;
     width: 25%;
     height: 30%;
+    word-wrap: break-word;
 }
 
 div.sticky {
