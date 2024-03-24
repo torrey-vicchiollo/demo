@@ -19,7 +19,7 @@ function createTeeSheet() {
     let currentTime = startTime; // Initialize currentTime to startTime
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < 5; j++) {
             const newCell = document.createElement("td");
             if (j == 0) {
                 const newTeeTimeSelect = document.createElement("option");
