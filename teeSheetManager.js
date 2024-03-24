@@ -20,8 +20,13 @@ function createTeeSheet() {
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
         
-        // Create and append cells for each column
-        for (let j = 0; j < 6; j++) {
+        // Create and append the first cell with time interval values
+        const timeCell = document.createElement("td");
+        timeCell.textContent = currentTime;
+        newRow.appendChild(timeCell);
+        
+        // Create and append cells for other columns
+        for (let j = 0; j < 5; j++) {
             const newCell = document.createElement("td");
             // Fill the cells with placeholder text
             newCell.textContent = 'X';
@@ -40,22 +45,17 @@ function createTeeSheet() {
     }
 }
 
-
-function calcAmountOfTimes(sTime, eTime, interval) {
-
-    // Convert start and end times to minutes since midnight
-    const startTime = parseInt(sTime.split(":")[0]) * 60 + parseInt(sTime.split(":")[1]);
-    const endTime = parseInt(eTime.split(":")[0]) * 60 + parseInt(eTime.split(":")[1]);
-
-    // Calculate time difference
-    const timeDifference = endTime - startTime;
-
-    // Calculate number of intervals
-    const numberOfIntervals = Math.ceil(timeDifference / interval);
-
-    return numberOfIntervals;
-
-
+// New function to populate interval selector based on the time interval selected
+function fillInIntervals() {
+    let times = createTimeInterval();
+    let select = document.getElementById("intervalSelector");
+    select.innerHTML = ''; // Clear existing options
+    for (let i = 0; i < times.length; i++) {
+        let option = document.createElement("option");
+        option.value = times[i]; // Use times[i] for both value and text
+        option.text = times[i];
+        select.appendChild(option);
+    }
 }
 
 function createTimeInterval() {
