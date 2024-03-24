@@ -22,7 +22,7 @@ function createTeeSheet() {
         // Create and append the first cell with time interval values
         const timeCell = document.createElement("td");
         timeCell.textContent = currentTime;
-        fillTimeIntervals(currentTime);
+
         newRow.appendChild(timeCell);
 
         for (let j = 1; j < 6; j++) {
@@ -33,7 +33,7 @@ function createTeeSheet() {
         }
 
         teeSheet.appendChild(newRow); // Append row to the table
-
+        fillTimeIntervals(currentTime);
         // Increment currentTime by the interval (in minutes)
         // This line splits the currentTime string into an array of two strings - one for hours and one for minutes, using the colon (:) 
         // as the delimiter. Then, it uses the map(Number) function to convert each string element to a number. The resulting array is destructured 
@@ -57,9 +57,10 @@ function createTeeSheet() {
 
 function fillTimeIntervals(time) {
     let option = document.createElement("option");
-    let intervalSelector = document.getElementById("intervalSelector");
+    let timeInput = document.getElementById("timeInput");
     option.value = time;
     option.text = time;
+    timeInput.appendChild(option);
 }
 
 
