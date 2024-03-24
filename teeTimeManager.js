@@ -17,7 +17,7 @@ function addTeeTime() {
                 console.log(time + " " + booker + " " + playerCount + " " + cartCount);
                 // Fill the row with the provided information
                 // we need to create row.cells for eachjh line and se them to empty text so they can be filled
-                if(row.cells[i].textContent = ''){
+                if(row.cells[i].textContent == ''){
                 
                     if(playerCount == 1){
                         row.cells[i].textContent = booker + ' ' + playerCount
