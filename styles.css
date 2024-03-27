@@ -54,7 +54,13 @@ label {
     font-family: Garamond, serif;
 }
 
-
+#dateDisplay {
+    padding-left: 15%;
+    color: #041025;
+    font-size: 30px;
+    font-family: Garamond, serif;
+    font-weight: bold;
+}
 
 /* tee sheet creation section */
 #teeSheetCreation {

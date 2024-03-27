@@ -1,5 +1,5 @@
 const d = new Date();
-const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 day = weekday[d.getDay()];
 date = d.getDate();
 month = 1 + d.getMonth();
