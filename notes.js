@@ -1,6 +1,6 @@
 const date = new Date();
-day = date.getDay();
-month = date.getMonth();
+day = date.getDate();
+month = 1 + date.getMonth();
 year = date.getFullYear();
 formattedDate = month + "/" + day + "/" + year;
 
