@@ -16,6 +16,7 @@
             fillInIntervals();
             fillInCartCount();
             fillInPlayerCount();
+            notesTitleDate();
         });
     </script>
 </head>
