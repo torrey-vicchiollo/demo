@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <p> header </p>
     <!-- header -->
     <div id="header">
         <p id="headerTitle">launch angle</p>
