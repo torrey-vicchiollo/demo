@@ -1,12 +1,13 @@
-const date = new Date();
-day = date.getDate();
-month = 1 + date.getMonth();
-year = date.getFullYear();
-formattedDate = month + "/" + day + "/" + year;
+const d = new Date();
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+day = weekday[d.getDay()];
+date = d.getDate();
+month = 1 + d.getMonth();
+year = d.getFullYear();
+formattedDate = day + ", " + month + "/" + date + "/" + year;
 
-function notesTitleDate(){
-    notesTitle = document.getElementById("notesTitle").innerHTML;
-    document.getElementById("notesTitle").innerHTML = notesTitle + " (" + formattedDate + ")"
+function dateDisplay(){
+    document.getElementById("dateDisplay").innerHTML = formattedDate;
 }
 
 function addNotes(){

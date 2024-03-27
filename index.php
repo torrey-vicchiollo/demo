@@ -16,7 +16,7 @@
             fillInIntervals();
             fillInCartCount();
             fillInPlayerCount();
-            notesTitleDate();
+            dateDisplay();
         });
     </script>
 </head>
@@ -26,6 +26,8 @@
     <div id="header">
         <p id="headerTitle">launch angle</p>
     </div>
+
+    <p id="dateDisplay"></p>
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
