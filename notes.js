@@ -1,11 +1,11 @@
 const date = new Date();
-day = Number(date.getDay());
-month = Number(date.getMonth());
-year = Number(date.getFullYear());
+day = date.getDay();
+month = date.getMonth();
+year = date.getFullYear();
 formattedDate = month + "/" + day + "/" + year;
 
 function notesTitleDate(){
-    notesTitle = document.getElementById("notesTitle");
+    notesTitle = document.getElementById("notesTitle").innerHTML;
     document.getElementById("notesTitle").innerHTML = notesTitle + " (" + formattedDate + ")"
 }
 
