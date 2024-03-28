@@ -86,8 +86,7 @@
             <p id="notesBody"></p>
             <form id="notesForm" action="includes/formhandler.inc.php" method="post">
                 <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34" placeholder="enter daily notes here"></textarea>
-                <br>
-                <button id="notesButton" onclick="addNotes()"><b>+</b></button>
+                <button id="notesButton"><b>+</b></button>
             </form>
         </div>
 
