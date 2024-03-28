@@ -1,9 +1,5 @@
-<?php
-    include_once 'includes/dbh.inc.php';
-?>
-
+<?php include_once 'includes/dbh.inc.php'; ?>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>launch angle</title>
@@ -23,7 +19,6 @@
         });
     </script>
 </head>
-
 <body>
     <!-- header -->
     <div id="header">
@@ -94,21 +89,22 @@
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0){
                     while($row = mysqli_fetch_assoc($result)){
-                        echo "<p id='notesBody'>" . $row['body'] . "</p>";
+                        echo "<p id='notesBody'> " . $row['body'] . "</p>";
                     }
+                }else{
+                    echo "<p id='notesBody'>daily notes have not been entered yet</p>";
                 }
             ?>  
-            <form id="notesForm">
+            <form id="notesForm" action="inclues/notesSubmit.inc.php" method="POST">
                 <textarea id="notesTextArea" name="notesTextArea" rows="6" 
                 cols="34" placeholder="enter daily notes here"></textarea>
                 <br>
                 <br>
-                <button id="notesButton"><b>+</b></button>
+                <button id="notesButton" type="submit" name="notesSubmit"><b>+</b></button>
             </form>
         </div>
 
     </div>  
 
 </body>
-
 </html>
