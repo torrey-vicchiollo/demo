@@ -83,7 +83,7 @@
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>    
             <?php
-                $date = date("Y/m/d");
+                $date = date("m/d/Y");
                 $sql = "SELECT * FROM notes WHERE date = '$date';";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);

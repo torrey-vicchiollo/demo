@@ -1,6 +1,6 @@
 <?php
     include_once 'dbh.inc.php';                                                     //gets connection to database
-    $date = date("Y/m/d");                                                          //sets date variable to current date
+    $date = date("m/d/Y");                                                          //sets date variable to current date
     $body = " ";                                                                    //initialize body variable
 
     $sql = "SELECT * FROM notes WHERE date = '$date';";                             //first call which gets existing body from current date   
