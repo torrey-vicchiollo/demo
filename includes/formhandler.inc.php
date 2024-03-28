@@ -1,7 +1,7 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $date = date("Y/m/d");
-        $body = htmlspecialchars($_POST["notesTextArea"]);
+        $body = $_POST['notesTextArea'];
         try{
             require_once "dbh.inc.php";
             $query = "INSERT INTO notes (date, body) VALUES (?, ?);";
