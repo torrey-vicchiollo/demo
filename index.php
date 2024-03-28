@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <script src="teeTimeManager.js"></script>
     <script src="teeSheetManager.js"></script>
-    <script src="notes.js"></script>
+    <script src="dateDisplay.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fillTeeTimeSelect("teeTimeSelectStart");
