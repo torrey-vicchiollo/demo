@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    include('includes/dbh.inc.php');
+    include_once 'includes/dbh.inc.php';
 ?>
 
 <html lang="en">
@@ -88,19 +87,7 @@
         <!-- notes section -->
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>
-                <?php
-                    $date = date("Y/m/d");
-                    $query = "SELECT body FROM notes WHERE date = $date";
-                    $stmt = $conn->prepare($query);
-                    $stmt->execute();
-                    $result = $stmt->getResult();
-                    if($result){?>
-                        <p id="notesBody"><?php $result ?></p><?php
-                    }else{?>
-                        <p id="notesBody">daily notes will appear here</p><?php
-                    }
-                ?>
-            <form id="notesForm" action="includes/notesformhandler.inc.php" method="post">
+            <form id="notesForm">
                 <textarea id="notesTextArea" name="notesTextArea" rows="6" 
                 cols="34" placeholder="enter daily notes here"></textarea>
                 <br>
