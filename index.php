@@ -1,7 +1,6 @@
-<html>
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <title>launch angle</title>
     <link rel="stylesheet" href="styles.css"></link>
@@ -85,11 +84,11 @@
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>
             <p id="notesBody"></p>
-            <form id="notesForm">
-                <textarea id="notesTextArea" rows="6" cols="34" placeholder="enter daily notes here"></textarea>
+            <form id="notesForm" action="includes/formhandler.inc.php" method="post">
+                <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34" placeholder="enter daily notes here"></textarea>
+                <br>
+                <button id="notesButton" onclick="addNotes()"><b>+</b></button>
             </form>
-            <br>
-            <button id="notesButton" onclick="addNotes()"><b>+</b></button>
         </div>
 
     </div>
