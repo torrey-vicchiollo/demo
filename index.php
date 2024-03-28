@@ -100,7 +100,7 @@
 
     <?php
                 $date = date("Y/m/d");
-                $sql = "SELECT * FROM notes WHERE date = $date;";
+                $sql = "SELECT * FROM notes WHERE date = '$date';";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0){
