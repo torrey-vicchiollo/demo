@@ -84,7 +84,7 @@
             <p id="notesTitle">today's notes</p>    
             <?php
                 $date = date("m/d/Y");
-                $sql = "SELECT * FROM Notes WHERE date = '$date';";
+                $sql = "SELECT * FROM notes WHERE date = '$date';";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0){
