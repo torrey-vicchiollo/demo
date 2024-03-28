@@ -1,7 +1,7 @@
 <?php
-    include_once 'dbh.inc.php';                                                     //gets connection
-    $date = date("Y/m/d");                                                          //sets date variable
-    $body = " ";                                                                    //initialize body
+    include_once 'dbh.inc.php';                                                     //gets connection to database
+    $date = date("Y/m/d");                                                          //sets date variable to current date
+    $body = " ";                                                                    //initialize body variable
 
     $sql = "SELECT * FROM notes WHERE date = '$date';";                             //first call which gets existing body from current date   
     $result = mysqli_query($conn, $sql);                                            //sets result variable
@@ -12,7 +12,7 @@
         }
     }
 
-    $body = $body . " " . $_POST['notesTextArea'] . " ";                            //body = fetched body + textarea
+    $body = $body . "<br>" . "→" . $_POST['notesTextArea'] . "<br>";                //body = fetched body + textarea
     $sql = "REPLACE INTO notes (date, body) VALUES ('$date', '$body');";            //second sql call
     mysqli_query($conn, $sql);                                                      //connect and query to database
     header("Location: ../index.php");                                               //send back to index.php
