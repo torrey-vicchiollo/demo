@@ -12,7 +12,7 @@
         }
     }
 
-    $body = $body . "<br>" . "→" . $_POST['notesTextArea'] . "<br>";                //body = fetched body + textarea
+    $body = $body . "→" . $_POST['notesTextArea'] . "<br>";                         //body = fetched body + textarea
     $sql = "REPLACE INTO notes (date, body) VALUES ('$date', '$body');";            //second sql call
     mysqli_query($conn, $sql);                                                      //connect and query to database
     header("Location: ../index.php");                                               //send back to index.php
