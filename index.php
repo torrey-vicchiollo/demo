@@ -95,7 +95,7 @@
                     echo "<p id='notesBody'>daily notes have not been entered yet</p>";
                 }
             ?>  
-            <form id="notesForm" action="inclues/notesSubmit.inc.php" method="POST">
+            <form id="notesForm" action="includes/notesSubmit.inc.php" method="POST">
                 <textarea id="notesTextArea" name="notesTextArea" rows="6" 
                 cols="34" placeholder="enter daily notes here"></textarea>
                 <br>
