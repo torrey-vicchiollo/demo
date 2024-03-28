@@ -84,8 +84,11 @@
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>
             <p id="notesBody"></p>
-            <form id="notesForm" action="includes/formhandler.inc.php" method="post">
-                <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34" placeholder="enter daily notes here"></textarea>
+            <form id="notesForm" action="includes/notesformhandler.inc.php" method="post">
+                <textarea id="notesTextArea" name="notesTextArea" rows="6" 
+                cols="34" placeholder="enter daily notes here"></textarea>
+                <br>
+                <br>
                 <button id="notesButton"><b>+</b></button>
             </form>
         </div>

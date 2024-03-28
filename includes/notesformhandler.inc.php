@@ -4,7 +4,7 @@
         $body = $_POST['notesTextArea'];
         try{
             require_once "dbh.inc.php";
-            $query = "INSERT INTO notes (date, body) VALUES (?, ?);";
+            $query = "REPLACE INTO notes (date, body) VALUES (?, ?);";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$date, $body]);
             $pdo = null;
