@@ -86,19 +86,8 @@
 
         <!-- notes section -->
         <div id="notes" class="sticky">
-            <p id="notesTitle">today's notes</p>     
-            <form id="notesForm">
-                <textarea id="notesTextArea" name="notesTextArea" rows="6" 
-                cols="34" placeholder="enter daily notes here"></textarea>
-                <br>
-                <br>
-                <button id="notesButton"><b>+</b></button>
-            </form>
-        </div>
-
-    </div>
-
-    <?php
+            <p id="notesTitle">today's notes</p>    
+            <?php
                 $date = date("Y/m/d");
                 $sql = "SELECT * FROM notes WHERE date = '$date';";
                 $result = mysqli_query($conn, $sql);
@@ -108,7 +97,17 @@
                         echo $row['body'];
                     }
                 }
-            ?>   
+            ?>  
+            <form id="notesForm">
+                <textarea id="notesTextArea" name="notesTextArea" rows="6" 
+                cols="34" placeholder="enter daily notes here"></textarea>
+                <br>
+                <br>
+                <button id="notesButton"><b>+</b></button>
+            </form>
+        </div>
+
+    </div>  
 
 </body>
 
