@@ -23,6 +23,7 @@ button {
     padding: 12px;
     font-size: 12px;
     font-style: bold;
+    cursor: pointer;
 }
 
 select {
@@ -30,6 +31,7 @@ select {
     border: none;
     border-bottom: 2px solid #04AA6D;
     color: #041025;
+    cursor: pointer;
 }
 
 label {
@@ -152,6 +154,10 @@ label {
     font-weight: bold;
 }
 
+#teeTimesTable {
+    border-collapse: collapse; /* This ensures that adjacent cells share borders */
+}
+
 th, td {
     font-size: 14px;
     padding-left: 60px;
@@ -159,6 +165,8 @@ th, td {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
+    border: 1px solid black;
+    
 }
 
 th {
@@ -224,3 +232,67 @@ div.sticky {
     background-color: #041025;
     color: white;
 }
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure modal appears on top */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    visibility: hidden; /* Hide modal by default */
+}
+
+.modal.active{
+    transform: translate(30%, 10%) scale(1);
+}
+#modalCloseButton{
+    visibility: hidden;
+}
+#modalHeader{
+    visibility: hidden;
+    padding: 10px, 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+
+}
+
+#modalHeader, #modalTitle{
+    visibility: hidden;
+
+    font-weight: bold;
+}
+
+#modalBody{
+    visibility: hidden;
+
+    padding: 10px, 15px;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, .5);
+    pointer-events: none
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+

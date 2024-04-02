@@ -1,24 +1,30 @@
 <?php include_once 'includes/dbh.inc.php'; ?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>launch angle</title>
-    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="stylesheet" href="styles.css">
+    </link>
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <script src="teeTimeManager.js"></script>
     <script src="teeSheetManager.js"></script>
     <script src="dateDisplay.js"></script>
+    <script src="dateHandler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             fillTeeTimeSelect("teeTimeSelectStart");
             fillTeeTimeSelect("teeTimeSelectEnd");
             fillInIntervals();
             fillInCartCount();
             fillInPlayerCount();
             dateDisplay();
+            fillDateSelects();
         });
     </script>
 </head>
+
 <body>
     <!-- header -->
     <div id="header">
@@ -36,6 +42,9 @@
         <select id="teeTimeSelectEnd"></select>
         <label for="intervalSelector">Interval</label>
         <select id="intervalSelector"></select>
+        <select id="yearForTeeSheet"></select>
+        <select id="monthForTeeSheet"></select>
+        <select id="dayForTeeSheet"></select>
     </div>
 
     <br>
@@ -79,32 +88,49 @@
             </table>
         </div>
 
+        <div id="calendar">
+
+
+        </div>
+
         <!-- notes section -->
         <div id="notes" class="sticky">
-            <p id="notesTitle">today's notes</p>    
+            <p id="notesTitle">today's notes</p>
             <?php
-                $date = date("m/d/Y");
-                $sql = "SELECT * FROM notes WHERE date = '$date';";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-                if($resultCheck > 0){
-                    while($row = mysqli_fetch_assoc($result)){
-                        echo "<p id='notesBody'> " . $row['body'] . "</p>";
-                    }
-                }else{
-                    echo "<p id='notesBody'>daily notes have not been entered yet</p>";
+            $date = date("m/d/Y");
+            $sql = "SELECT * FROM notes WHERE date = '$date';";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if ($resultCheck > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<p id='notesBody'> " . $row['body'] . "</p>";
                 }
-            ?>  
+            } else {
+                echo "<p id='notesBody'>daily notes have not been entered yet</p>";
+            }
+            ?>
             <form id="notesForm" action="includes/notesSubmit.inc.php" method="POST">
-                <textarea id="notesTextArea" name="notesTextArea" rows="6" 
-                cols="34" placeholder="enter daily notes here"></textarea>
+                <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34"
+                    placeholder="enter daily notes here"></textarea>
                 <br>
                 <br>
                 <button id="notesButton" type="submit" name="notesSubmit"><b>+</b></button>
             </form>
         </div>
 
-    </div>  
+    </div>
+
+    <div class="modal active" id="modal">
+        <div id="modalHeader">
+            <div id="modalTitle">
+            </div>
+            <button id="modalCloseButton">&times;</button>
+        </div>
+        <div id="modelBody">
+        </div>
+    </div>
+<div class="active" id="modalOverlay"></div>
 
 </body>
+
 </html>

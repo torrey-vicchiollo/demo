@@ -7,6 +7,11 @@ function createTeeSheet() {
     let timeInput = document.getElementById("timeInput");
     console.log(startTime + " " + endTime + " " + interval);
 
+    if (checkTableContent("teeTimesTable")) {
+        console.log("table has information");
+        return;
+    }
+
     // Check if start time is greater than or equal to end time
     if (startTime >= endTime) {
         alert("This is not a valid time period");
@@ -19,13 +24,30 @@ function createTeeSheet() {
     let currentTime = startTime; // Initialize currentTime to startTime
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
-        // Create and append the first cell with time interval values
+
+        // Create and append delete button as the first cell
+        const deleteCell = document.createElement("td");
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "modalButton"
+        deleteButton.onclick = handleDeleteButtonClick(currentTime); // Call handleDeleteButtonClick with currentTime
+        deleteCell.appendChild(deleteButton);
+        newRow.appendChild(deleteCell);
+
+        // Create and append edit button as the second cell
+        const editCell = document.createElement("td");
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.onclick = handleEditButtonClick(currentTime); // Call handleEditButtonClick with currentTime
+        editCell.appendChild(editButton);
+        newRow.appendChild(editCell);
+
+        // Create and append the third cell with time interval values
         const timeCell = document.createElement("td");
         timeCell.textContent = currentTime;
-
         newRow.appendChild(timeCell);
 
-        for (let j = 1; j < 6; j++) {
+        for (let j = 1; j < 5; j++) {
             const newCell = document.createElement("td");
             // Fill the cells with placeholder text 'X'
             newCell.textContent = 'X';
@@ -35,26 +57,13 @@ function createTeeSheet() {
         teeSheet.appendChild(newRow); // Append row to the table
         fillTimeIntervals(currentTime);
         // Increment currentTime by the interval (in minutes)
-        // This line splits the currentTime string into an array of two strings - one for hours and one for minutes, using the colon (:) 
-        // as the delimiter. Then, it uses the map(Number) function to convert each string element to a number. The resulting array is destructured 
-        // into two variables: hours and minutes.
         let [hours, minutes] = currentTime.split(":").map(Number);
         minutes += interval;
-        //  Here, Math.floor(minutes / 60) calculates the number of hours to add based on the incremented minutes. 
-        // This calculation ensures that if the added minutes exceed 60, they are converted into hours. The result is added 
-        // to the current value of hours.
         hours += Math.floor(minutes / 60);
-        // This line calculates the remaining minutes after converting any extra minutes into hours. % is the modulus operator, 
-        // which returns the remainder of dividing the left-hand operand by the right-hand operand. In this case, it ensures that minutes does not exceed 60.
         minutes %= 60;
-        // this line constructs a new currentTime string using template literals (${}) to combine hours and minutes 
-        // as strings. The padStart(2, "0") method ensures that both hours and minutes are represented as two-digit strings, 
-        // padding with a leading zero if necessary.
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
-
     }
 }
-
 function fillTimeIntervals(time) {
     let option = document.createElement("option");
     let timeInput = document.getElementById("timeInput");
@@ -135,3 +144,55 @@ function fillInPlayerCount() {
         select.appendChild(option);
     }
 }
+
+function checkTableContent(tableId) {
+    var table = document.getElementById(tableId);
+    if (table) {
+        var rows = table.getElementsByTagName('tr');
+        if (rows.length > 0) {
+            return true;
+            // Your code to do something if table has content
+        } else {
+            return false;
+        }
+    } else {
+        console.error("Table with ID " + tableId + " not found.");
+    }
+}
+
+function handleDeleteButtonClick(currentTime) {
+    //needs to return function so it saves the current time when the method was created
+    return function() {
+        let modal = document.getElementById("modal");
+        let header = document.getElementById("modalHeader");
+        let title = document.getElementById("modalTitle");
+        let deleteButton = document.getElementById("modalDeleteButton");
+        let body = document.getElementById("modalBody");
+        modal.style.visibility = "visible";
+        header.style.visibility = "visible";
+        title.style.visibility = "visible";
+        deleteButton.style.visibility = "visible";
+        body.style.visibility = "visible";
+        title.text = currentTime;
+
+
+
+        
+    };
+}
+
+// Function to handle edit button click
+function handleEditButtonClick(currentTime) {
+    //needs to return function so it saves the current time when the method was created
+    return function() {
+        let modal = document.getElementById("modal");
+        let header = document.getElementById("modalHeader");
+        let Title = document.getElementById("modalTitle");
+        let deleteButton = document.getElementById("modalDeleteButton");
+        let body = document.getElementById("modalBody");
+
+        
+    };
+}
+
+
