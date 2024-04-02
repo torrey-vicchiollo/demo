@@ -293,6 +293,19 @@ div.sticky {
     pointer-events: all;
 }
 
+#modifyTeeTime , #deleteTeeTime{
+    visibility: hidden;
+    color: black;
+
+}
+
+#deleteTeeTime{
+    background-color: red;
+}
+
+#modifyTeeTime{
+    background-color: yellow;
+}
 
 
 

@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     </link>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script src="teeTimeManager.js"></script>
+    <script src="teeTimeCreator.js"></script>
     <script src="teeSheetManager.js"></script>
     <script src="dateDisplay.js"></script>
     <script src="dateHandler.js"></script>
+    <script src="teeTimeHandler.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -60,6 +61,12 @@
         <select id="golferCountInput"></select>
         <label for="cartCountInput">Cart(s)</label>
         <select id="cartCountInput"></select>
+    </div>
+
+    <div id="teeTimeButtons">
+        <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
+        <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
+
     </div>
 
     <br>
@@ -119,16 +126,19 @@
         </div>
 
     </div>
-
-    <div class="modal active" id="modal">
-        <div id="modalHeader">
-            <div id="modalTitle">
-            </div>
-            <button id="modalCloseButton">&times;</button>
-        </div>
-        <div id="modelBody">
-        </div>
-    </div>
+    
+<div class="modal active" id="modal">
+<div id="modalHeader">
+    <div id="modalTitle"></div>
+    <button id="modalCloseButton">&times;</button>
+</div>
+<div id="modalBody">
+    <input type="text" id="modify1" placeholder="Player 1"><br>
+    <input type="text" id="modify2" placeholder="Player 2"><br>
+    <input type="text" id="modify3" placeholder="Player 3"><br>
+    <input type="text" id="modify4" placeholder="Player 4"><br>
+    <button id="submitButton">Submit</button>
+</div>
 <div class="active" id="modalOverlay"></div>
 
 </body>

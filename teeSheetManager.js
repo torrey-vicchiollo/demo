@@ -5,7 +5,7 @@ function createTeeSheet() {
     let interval = parseInt(document.getElementById("intervalSelector").value);
     let teeSheet = document.getElementById("teeTimesTable");
     let timeInput = document.getElementById("timeInput");
-    console.log(startTime + " " + endTime + " " + interval);
+    // console.log(startTime + " " + endTime + " " + interval);
 
     if (checkTableContent("teeTimesTable")) {
         console.log("table has information");
@@ -19,26 +19,21 @@ function createTeeSheet() {
     }
 
     const amountOfTimes = calcAmountOfTimes(startTime, endTime, interval);
-    console.log("Number of times: " + amountOfTimes);
+    // console.log("Number of times: " + amountOfTimes);
 
     let currentTime = startTime; // Initialize currentTime to startTime
     for (let i = 0; i < amountOfTimes; i++) {
         const newRow = document.createElement("tr");
 
         // Create and append delete button as the first cell
-        const deleteCell = document.createElement("td");
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.className = "modalButton"
-        deleteButton.onclick = handleDeleteButtonClick(currentTime); // Call handleDeleteButtonClick with currentTime
-        deleteCell.appendChild(deleteButton);
-        newRow.appendChild(deleteCell);
+
 
         // Create and append edit button as the second cell
         const editCell = document.createElement("td");
-        const editButton = document.createElement("button");
-        editButton.textContent = "Edit";
-        editButton.onclick = handleEditButtonClick(currentTime); // Call handleEditButtonClick with currentTime
+        const editButton = document.createElement("input");
+        editButton.type = "checkbox"; // Set type to checkbox
+        editButton.id = "checkBox" + currentTime;
+        editButton.className = "checkBox";
         editCell.appendChild(editButton);
         newRow.appendChild(editCell);
 
@@ -50,6 +45,7 @@ function createTeeSheet() {
         for (let j = 1; j < 5; j++) {
             const newCell = document.createElement("td");
             // Fill the cells with placeholder text 'X'
+            newCell.className = 'teeTimeSlot'
             newCell.textContent = 'X';
             newRow.appendChild(newCell);
         }
@@ -62,6 +58,9 @@ function createTeeSheet() {
         hours += Math.floor(minutes / 60);
         minutes %= 60;
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+        
+        document.getElementById("modifyTeeTime").style.visibility = 'visible';
+        document.getElementById("deleteTeeTime").style.visibility = 'visible';
     }
 }
 function fillTimeIntervals(time) {
@@ -162,7 +161,7 @@ function checkTableContent(tableId) {
 
 function handleDeleteButtonClick(currentTime) {
     //needs to return function so it saves the current time when the method was created
-    return function() {
+    return function () {
         let modal = document.getElementById("modal");
         let header = document.getElementById("modalHeader");
         let title = document.getElementById("modalTitle");
@@ -177,22 +176,22 @@ function handleDeleteButtonClick(currentTime) {
 
 
 
-        
+
     };
 }
 
 // Function to handle edit button click
-function handleEditButtonClick(currentTime) {
-    //needs to return function so it saves the current time when the method was created
-    return function() {
-        let modal = document.getElementById("modal");
-        let header = document.getElementById("modalHeader");
-        let Title = document.getElementById("modalTitle");
-        let deleteButton = document.getElementById("modalDeleteButton");
-        let body = document.getElementById("modalBody");
+// function handleEditButtonClick(currentTime) {
+//     //needs to return function so it saves the current time when the method was created
+//     return function () {
+//         let modal = document.getElementById("modal");
+//         let header = document.getElementById("modalHeader");
+//         let Title = document.getElementById("modalTitle");
+//         let deleteButton = document.getElementById("modalDeleteButton");
+//         let body = document.getElementById("modalBody");
 
-        
-    };
-}
+
+//     };
+// }
 
 
