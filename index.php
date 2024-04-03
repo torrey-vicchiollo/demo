@@ -1,4 +1,4 @@
-<?php include_once 'includes/dbh.inc.php'; ?>
+<?php include 'includes/dbh.inc.php'; ?>
 <html lang="en">
 
 <head>
@@ -36,16 +36,27 @@
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
-        <button id="createButton" onclick="createTeeSheet()"><b>+</b></button>
-        <label for="teeTimeSelectStart">Start Time</label>
-        <select id="teeTimeSelectStart"></select>
-        <label for="teeTimeSelectEnd">End Time</label>
-        <select id="teeTimeSelectEnd"></select>
-        <label for="intervalSelector">Interval</label>
-        <select id="intervalSelector"></select>
-        <select id="yearForTeeSheet"></select>
-        <select id="monthForTeeSheet"></select>
-        <select id="dayForTeeSheet"></select>
+        <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
+            <button id="createButton" name="createButton" onclick="createTeeSheet()" type="submit"><b>+</b></button>
+
+            <label for="teeTimeSelectStart">Start Time</label>
+            <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
+
+            <label for="teeTimeSelectEnd">End Time</label>
+            <select id="teeTimeSelectEnd" name="teeTimeSelectEnd"></select>
+
+            <label for="intervalSelector">Interval</label>
+            <select id="intervalSelector" name="intervalSelector"></select>
+
+            <label for="yearForTeeSheet">Year</label>
+            <select id="yearForTeeSheet" name="yearForTeeSheet"></select>
+
+            <label for="monthForTeeSheet">Month</label>
+            <select id="monthForTeeSheet" name="monthForTeeSheet"></select>
+
+            <label for="dayForTeeSheet">Day</label>
+            <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
+        </form>
     </div>
 
     <br>
@@ -74,7 +85,26 @@
     <!-- main section -->
     <div id="main">
         <!-- tee table-->
-        <div id="teeTable">
+        <div id="teeTable"> 
+//           <?php
+//              $date = date("m/d/Y");
+//              $sql = "SELECT * FROM teesheet WHERE date = '$date';";
+//               $result = mysqli_query($conn, $sql);
+//               $resultCheck = mysqli_num_rows($result);
+//              if($resultCheck > 0){
+//                   while($row = mysqli_fetch_assoc($result)){
+//                      echo "<p id='teeTableTitle'>today's tee sheet</p>";
+//                       echo "<table id='teeTimesTable'>";
+//                      echo "<thead>";
+//                       echo "</thead>";
+//                       echo "<tbody>";
+//                       echo "</tbody>";
+//                       echo "</table>";
+//                    }
+//                }else{
+//                    echo "<p id='teeTableTitle'>please create a tee sheet for today</p>";
+//                }
+//            ?>
             <p id="teeTableTitle">today's tee sheet</p>
             <table id="teeTimesTable">
                 <thead>
@@ -108,11 +138,11 @@
             $sql = "SELECT * FROM notes WHERE date = '$date';";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
-            if ($resultCheck > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
+            if($resultCheck > 0){
+                while($row = mysqli_fetch_assoc($result)){
                     echo "<p id='notesBody'> " . $row['body'] . "</p>";
                 }
-            } else {
+            }else{
                 echo "<p id='notesBody'>daily notes have not been entered yet</p>";
             }
             ?>
