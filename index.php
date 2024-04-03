@@ -36,7 +36,9 @@
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
+        <!--
         <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
+             -->
             <button id="createButton" name="createButton" onclick="createTeeSheet()" type="submit"><b>+</b></button>
 
             <label for="teeTimeSelectStart">Start Time</label>
@@ -56,7 +58,9 @@
 
             <label for="dayForTeeSheet">Day</label>
             <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
+        <!--
         </form>
+         -->
     </div>
 
     <br>
