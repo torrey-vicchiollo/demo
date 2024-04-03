@@ -152,6 +152,8 @@ label {
     font-size: 30px;
     font-family: Garamond, serif;
     font-weight: bold;
+    float: left;
+    width: 30%;
 }
 
 #teeTimesTable {
@@ -296,15 +298,23 @@ div.sticky {
 #modifyTeeTime , #deleteTeeTime{
     visibility: hidden;
     color: black;
+    background-color: white;
+    border: 1px solid black;
 
 }
 
 #deleteTeeTime{
-    background-color: red;
+    background-color: white;
 }
 
 #modifyTeeTime{
-    background-color: yellow;
+    background-color: white;
+}
+
+#teeTimeButtons{
+    float: right;
+    width: 70%;
+    margin-top: 26px;
 }
 
 

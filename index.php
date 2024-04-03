@@ -78,19 +78,20 @@
         <select id="cartCountInput"></select>
     </div>
 
-    <div id="teeTimeButtons">
-        <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
-        <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
-
-    </div>
-
     <br>
 
     <!-- main section -->
     <div id="main">
         <!-- tee table-->
         <div id="teeTable"> 
-            <p id="teeTableTitle">today's tee sheet</p>
+            <div>
+                <p id="teeTableTitle">today's tee sheet</p>
+                <div id="teeTimeButtons">
+                    <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
+                    <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
+                </div>
+            </div>
+            <br>
             <table id="teeTimesTable">
                 <thead>
                     <!--
