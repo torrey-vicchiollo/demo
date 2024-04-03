@@ -16,4 +16,3 @@
         VALUES ('$date', '$startOfDay', '$endOfDay', '$interval');";                //query for new teesheet
         mysqli_query($conn, $sql);                                                  //query to database
     }
-    header("Location: ../index.php");                                               //send back to index.php

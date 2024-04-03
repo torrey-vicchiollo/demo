@@ -1,4 +1,3 @@
-
 function createTeeSheet() {
     let startTime = document.getElementById("teeTimeSelectStart").value;
     let endTime = document.getElementById("teeTimeSelectEnd").value;
