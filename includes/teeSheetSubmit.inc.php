@@ -8,11 +8,11 @@
     $day = $_POST['dayForTeeSheet'];                                                //day
     $date = $month . "/" . $day . "/" . $year;                                      //date
     
-    $sql = "SELECT * FROM teesheet WHERE date = '$date';";                          //first call which checks if teesheet for day already exists  
+    $sql = "SELECT * FROM teesheets WHERE date = '$date';";                          //first call which checks if teesheet for day already exists  
     $result = mysqli_query($conn, $sql);                                            //sets result variable
     $resultCheck = mysqli_num_rows($result);                                        //sets result check variable
     if($resultCheck < 1){                                                           //if there isn't already a teesheet for the date
-        $sql = "INSERT INTO teesheet (date, startOfDay, endOfDay, intrvl)
+        $sql = "INSERT INTO teesheets (date, startOfDay, endOfDay, intrvl)
         VALUES ('$date', '$startOfDay', '$endOfDay', '$interval');";                //query for new teesheet
         mysqli_query($conn, $sql);                                                  //query to database
     }
