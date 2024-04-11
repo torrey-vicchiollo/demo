@@ -22,7 +22,7 @@
             fillInPlayerCount();
             dateDisplay();
             fillDateSelects();
-            
+
         });
     </script>
 </head>
@@ -40,7 +40,7 @@
         <!--
         <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
              -->
-            <button id="createButton" name="createButton" onclick="createTeeSheet()" type="submit"><b>+</b></button>
+            <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()" type="submit"><b>+</b></button>
 
             <label for="teeTimeSelectStart">Start Time</label>
             <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
@@ -68,7 +68,7 @@
 
     <!-- tee time insert section -->
     <div id="insert">
-        <button id="insertButton" onclick="addTeeTime()"><b>+</b></button>
+        <button id="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
         <label for="timeInput">Tee Time</label>
         <select id="timeInput"></select>
         <label for="bookerInput">Booker</label>

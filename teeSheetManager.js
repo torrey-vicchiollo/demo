@@ -1,15 +1,30 @@
-function createTeeSheet() {
-    //gets starttime value from select box 
+
+function formatTeeSheetFromHTML(){
+    // gets starttime value from select box 
     let startTime = document.getElementById("teeTimeSelectStart").value;
     //gets endtime value from select box 
     let endTime = document.getElementById("teeTimeSelectEnd").value;
+
     //gets interval value from select box
     let interval = parseInt(document.getElementById("intervalSelector").value);
     //gets the whole table from the html
     let teeSheet = document.getElementById("teeTimesTable");
-    // this is useless just too scared to remove it
-    let timeInput = document.getElementById("timeInput");
-    // console.log(startTime + " " + endTime + " " + interval);
+
+    createTeeSheet(startTime, endTime, interval, teeSheet);
+}
+
+
+function createTeeSheet(startTime, endTime, interval, teeSheet) {
+
+    //gets starttime value from select box 
+    // let startTime = document.getElementById("teeTimeSelectStart").value;
+    // //gets endtime value from select box 
+    // let endTime = document.getElementById("teeTimeSelectEnd").value;
+    // //gets interval value from select box
+    // let interval = parseInt(document.getElementById("intervalSelector").value);
+    // //gets the whole table from the html
+    // let teeSheet = document.getElementById("teeTimesTable");
+
 
     //checks if the table has content in it by looking at if it has any rows
     if (checkTableContent("teeTimesTable")) {
@@ -33,9 +48,6 @@ function createTeeSheet() {
     for (let i = 0; i < amountOfTimes; i++) {
         //create a new row
         const newRow = document.createElement("tr");
-
-        // Create and append delete button as the first cell
-
 
         // Create and append the check box as first cell
         const editCell = document.createElement("td");
@@ -62,8 +74,9 @@ function createTeeSheet() {
 
         //append those cells into the row
         teeSheet.appendChild(newRow); // Append row to the table
-        //sill the select with each tee time so we can actually create a tee time
+        //Fill the select with each tee time so we can actually create a tee time
         fillTimeIntervals(currentTime);
+
         // Increment currentTime by the interval (in minutes)
         let [hours, minutes] = currentTime.split(":").map(Number);
         minutes += interval;
@@ -75,6 +88,7 @@ function createTeeSheet() {
         document.getElementById("modifyTeeTime").style.visibility = 'visible';
         document.getElementById("deleteTeeTime").style.visibility = 'visible';
     }
+
 }
 function fillTimeIntervals(time) {
     //creating the options
@@ -103,17 +117,23 @@ function calcAmountOfTimes(sTime, eTime, interval) {
 
 }
 
+
 function createTimeInterval() {
     let times = [];
     for (let hour = 0; hour < 24; hour++) {
         for (let minute = 0; minute < 60; minute += 5) {
             let time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
             times.push(time);
-            console.log(time);
+            // console.log(time);
         }
     }
     return times;
 }
+/*
+ ^^^^^^^^^^^^^^^^^^^
+THESE TWO METHODS WORK TOGETHER TO FILL INB THE START AND END TEE TIME SELECTORS
+ vvvvvvvvvvvvvvvvvvv
+*/
 
 function fillTeeTimeSelect(idName) {
     let times = createTimeInterval(); // Call the function to get the times array
@@ -126,6 +146,8 @@ function fillTeeTimeSelect(idName) {
     }
 }
 
+
+//THIS COULD BE HARD CODED
 function fillInIntervals() {
     let a = 4;
     let select = document.getElementById("intervalSelector");
@@ -137,6 +159,7 @@ function fillInIntervals() {
     }
 }
 
+//THIS COULD BE HARD CODED
 function fillInCartCount() {
     let select = document.getElementById("cartCountInput");
     for (let i = 0; i < 2; i++) {
@@ -148,6 +171,7 @@ function fillInCartCount() {
 
 }
 
+//THIS COULD BE HARD CODED
 function fillInPlayerCount() {
     let select = document.getElementById("golferCountInput");
     for (let i = 0; i < 4; i++) {
@@ -172,6 +196,7 @@ function checkTableContent(tableId) {
         console.error("Table with ID " + tableId + " not found.");
     }
 }
+
 
 function handleDeleteButtonClick(currentTime) {
     //needs to return function so it saves the current time when the method was created

@@ -1,6 +1,3 @@
-
-
-
 function modifyTeeTime() {
     let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
     
