@@ -1,8 +1,8 @@
-<?php include 'includes/dbh.inc.php'; ?>
-<html lang="en">
+<?php include 'includes/dbh.inc.php'; ?>                                                <!-- when the page loads, connect to databse -->                                                           
+<html lang="en">                                                                        <!-- head html tag, sets web language to english -->
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">                                                              <!-- sets charset to utf-8 which is standard -->
     <title>launch angle</title>
     <link rel="stylesheet" href="styles.css">
     </link>
@@ -12,7 +12,8 @@
     <script src="dateDisplay.js"></script>
     <script src="dateHandler.js"></script>
     <script src="teeTimeHandler.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fillTeeTimeSelect("teeTimeSelectStart");
@@ -22,7 +23,7 @@
             fillInPlayerCount();
             dateDisplay();
             fillDateSelects();
-
+            
         });
     </script>
 </head>
@@ -121,17 +122,26 @@
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>
             <?php
-            $date = date("m/d/Y");
-            $sql = "SELECT * FROM notes WHERE date = '$date';";
-            $result = mysqli_query($conn, $sql);
-            $resultCheck = mysqli_num_rows($result);
-            if($resultCheck > 0){
-                while($row = mysqli_fetch_assoc($result)){
+                #get date
+                $date = date("m/d/Y");
+                #create query where you check in the notes table, for the notes with the primary key matching date
+                $sql = "SELECT * FROM notes WHERE date = '$date';";
+                #store result of query into variable
+                $result = mysqli_query($conn, $sql);
+                #storing the number of rows from result
+                $resultCheck = mysqli_num_rows($result);
+                #if at least 1 row in result
+                if($resultCheck > 0){
+                    #while there is a row in result
+                    while($row = mysqli_fetch_assoc($result)){
+                    #add body of row to notes div in html
                     echo "<p id='notesBody'> " . $row['body'] . "</p>";
                 }
-            }else{
-                echo "<p id='notesBody'>daily notes have not been entered yet</p>";
-            }
+                #if no result
+                }else{
+                    #echo message for row creation
+                    echo "<p id='notesBody'>daily notes have not been entered yet</p>";
+                }
             ?>
             <form id="notesForm" action="includes/notesSubmit.inc.php" method="POST">
                 <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34"

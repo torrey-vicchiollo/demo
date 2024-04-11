@@ -16,14 +16,6 @@ function formatTeeSheetFromHTML(){
 
 function createTeeSheet(startTime, endTime, interval, teeSheet) {
 
-    //gets starttime value from select box 
-    // let startTime = document.getElementById("teeTimeSelectStart").value;
-    // //gets endtime value from select box 
-    // let endTime = document.getElementById("teeTimeSelectEnd").value;
-    // //gets interval value from select box
-    // let interval = parseInt(document.getElementById("intervalSelector").value);
-    // //gets the whole table from the html
-    // let teeSheet = document.getElementById("teeTimesTable");
 
 
     //checks if the table has content in it by looking at if it has any rows
