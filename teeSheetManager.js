@@ -173,6 +173,7 @@ function checkTableContent(tableId) {
     }
 }
 
+//no longer used
 function handleDeleteButtonClick(currentTime) {
     //needs to return function so it saves the current time when the method was created
     return function () {
