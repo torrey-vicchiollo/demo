@@ -22,6 +22,7 @@
             fillInPlayerCount();
             dateDisplay();
             fillDateSelects();
+            
         });
     </script>
 </head>

@@ -1,11 +1,17 @@
 function createTeeSheet() {
+    //gets starttime value from select box 
     let startTime = document.getElementById("teeTimeSelectStart").value;
+    //gets endtime value from select box 
     let endTime = document.getElementById("teeTimeSelectEnd").value;
+    //gets interval value from select box
     let interval = parseInt(document.getElementById("intervalSelector").value);
+    //gets the whole table from the html
     let teeSheet = document.getElementById("teeTimesTable");
+    // this is useless just too scared to remove it
     let timeInput = document.getElementById("timeInput");
     // console.log(startTime + " " + endTime + " " + interval);
 
+    //checks if the table has content in it by looking at if it has any rows
     if (checkTableContent("teeTimesTable")) {
         console.log("table has information");
         return;
@@ -17,17 +23,21 @@ function createTeeSheet() {
         return; // Exit function if invalid time period
     }
 
+    //helper method to see the tee time count 
     const amountOfTimes = calcAmountOfTimes(startTime, endTime, interval);
     // console.log("Number of times: " + amountOfTimes);
 
     let currentTime = startTime; // Initialize currentTime to startTime
+
+    //create the same amount of rows as the amount of times
     for (let i = 0; i < amountOfTimes; i++) {
+        //create a new row
         const newRow = document.createElement("tr");
 
         // Create and append delete button as the first cell
 
 
-        // Create and append edit button as the second cell
+        // Create and append the check box as first cell
         const editCell = document.createElement("td");
         const editButton = document.createElement("input");
         editButton.type = "checkbox"; // Set type to checkbox
@@ -36,11 +46,12 @@ function createTeeSheet() {
         editCell.appendChild(editButton);
         newRow.appendChild(editCell);
 
-        // Create and append the third cell with time interval values
+        // Create and append the second cell as the time of each tee times
         const timeCell = document.createElement("td");
         timeCell.textContent = currentTime;
         newRow.appendChild(timeCell);
 
+        //now we iterate through the row and fill it out with slots
         for (let j = 1; j < 5; j++) {
             const newCell = document.createElement("td");
             // Fill the cells with placeholder text 'X'
@@ -49,7 +60,9 @@ function createTeeSheet() {
             newRow.appendChild(newCell);
         }
 
+        //append those cells into the row
         teeSheet.appendChild(newRow); // Append row to the table
+        //sill the select with each tee time so we can actually create a tee time
         fillTimeIntervals(currentTime);
         // Increment currentTime by the interval (in minutes)
         let [hours, minutes] = currentTime.split(":").map(Number);
@@ -58,11 +71,13 @@ function createTeeSheet() {
         minutes %= 60;
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
         
+        //buttons now visible
         document.getElementById("modifyTeeTime").style.visibility = 'visible';
         document.getElementById("deleteTeeTime").style.visibility = 'visible';
     }
 }
 function fillTimeIntervals(time) {
+    //creating the options
     let option = document.createElement("option");
     let timeInput = document.getElementById("timeInput");
     option.value = time;
