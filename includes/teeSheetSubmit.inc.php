@@ -5,7 +5,7 @@
     $interval = $_POST['intervalSelector'];                                         //interval
     $year = $_POST['yearForTeeSheet'];                                              //year
     $month = $_POST['monthForTeeSheet'] + 1;                                        //month
-    $day = $_POST['dayForTeeSheet'];                                                //day
+    $day = $_POST['dayForTeeSheet'];
     $date = $month . "/" . $day . "/" . $year;                                      //date
     
     $sql = "SELECT * FROM teesheets WHERE date = '$date';";                          //first call which checks if teesheet for day already exists  

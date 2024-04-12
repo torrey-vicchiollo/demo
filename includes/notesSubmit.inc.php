@@ -1,6 +1,6 @@
 <?php
     include_once 'dbh.inc.php';                                                     //gets connection to database
-    $date = date("m/d/Y");                                                          //sets date variable to current date
+    $date = date("n/j/Y");                                                          //sets date variable to current date
     $body = " ";                                                                    //initialize body variable
 
     #this is the first check to see and get existing notes

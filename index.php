@@ -1,31 +1,11 @@
-<?php include 'includes/dbh.inc.php'; ?>                                                <!-- when the page loads, connect to databse -->                                                           
-<html lang="en">                                                                        <!-- head html tag, sets web language to english -->
+<?php include 'includes/dbh.inc.php'; ?>                                                          
+<html lang="en">                                                                     
 
 <head>
-    <meta charset="UTF-8">                                                              <!-- sets charset to utf-8 which is standard -->
+    <meta charset="UTF-8">
     <title>launch angle</title>
     <link rel="stylesheet" href="styles.css">
-    </link>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script src="teeTimeCreator.js"></script>
-    <script src="teeSheetManager.js"></script>
-    <script src="dateDisplay.js"></script>
-    <script src="dateHandler.js"></script>
-    <script src="teeTimeHandler.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fillTeeTimeSelect("teeTimeSelectStart");
-            fillTeeTimeSelect("teeTimeSelectEnd");
-            fillInIntervals();
-            fillInCartCount();
-            fillInPlayerCount();
-            dateDisplay();
-            fillDateSelects();
-            
-        });
-    </script>
 </head>
 
 <body>
@@ -38,9 +18,7 @@
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
-        <!--
         <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
-             -->
             <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()" type="submit"><b>+</b></button>
 
             <label for="teeTimeSelectStart">Start Time</label>
@@ -60,9 +38,7 @@
 
             <label for="dayForTeeSheet">Day</label>
             <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
-        <!--
         </form>
-         -->
     </div>
 
     <br>
@@ -84,37 +60,28 @@
 
     <!-- main section -->
     <div id="main">
+
         <!-- tee table-->
         <div id="teeTable"> 
             <div>
                 <p id="teeTableTitle">today's tee sheet</p>
                 <div id="teeTimeButtons">
-                    <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
-                    <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
+                    <form id="deleteTeeTimeForm" action="includes/deleteTeeSheet.inc.php" method="POST">
+                        <button id="modifyTeeTime" type="button" onclick="modifyTeeTime()">Modify</button>
+                        <button id="deleteTeeTime" type="submit" name="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
+                    </form>
                 </div>
             </div>
             <br>
             <table id="teeTimesTable">
                 <thead>
-                    <!--
-                    <tr>
-                        <th>Time</th>
-                        <th>Booker</th>
-                        <th>P2</th>
-                        <th>P3</th>
-                        <th>P4</th>
-                        <th>Cart(s)</th>
-                    </tr>
-                    -->
                 </thead>
                 <tbody>
-
                 </tbody>
             </table>
         </div>
 
         <div id="calendar">
-
 
         </div>
 
@@ -122,24 +89,15 @@
         <div id="notes" class="sticky">
             <p id="notesTitle">today's notes</p>
             <?php
-                #get date
-                $date = date("m/d/Y");
-                #create query where you check in the notes table, for the notes with the primary key matching date
+                $date = date("n/j/Y");
                 $sql = "SELECT * FROM notes WHERE date = '$date';";
-                #store result of query into variable
                 $result = mysqli_query($conn, $sql);
-                #storing the number of rows from result
                 $resultCheck = mysqli_num_rows($result);
-                #if at least 1 row in result
                 if($resultCheck > 0){
-                    #while there is a row in result
                     while($row = mysqli_fetch_assoc($result)){
-                    #add body of row to notes div in html
-                    echo "<p id='notesBody'> " . $row['body'] . "</p>";
-                }
-                #if no result
+                        echo "<p id='notesBody'> " . $row['body'] . "</p>";
+                    }
                 }else{
-                    #echo message for row creation
                     echo "<p id='notesBody'>daily notes have not been entered yet</p>";
                 }
             ?>
@@ -154,20 +112,55 @@
 
     </div>
     
-<div class="modal active" id="modal">
-<div id="modalHeader">
-    <div id="modalTitle"></div>
-    <button id="modalCloseButton">&times;</button>
-</div>
-<div id="modalBody">
-    <input type="text" id="modify1" placeholder="Player 1"><br>
-    <input type="text" id="modify2" placeholder="Player 2"><br>
-    <input type="text" id="modify3" placeholder="Player 3"><br>
-    <input type="text" id="modify4" placeholder="Player 4"><br>
-    <button id="submitButton">Submit</button>
-</div>
-<div class="active" id="modalOverlay"></div>
+    <div class="modal active" id="modal">
+    <div id="modalHeader">
+        <div id="modalTitle"></div>
+        <button id="modalCloseButton">&times;</button>
+    </div>
+    <div id="modalBody">
+        <input type="text" id="modify1" placeholder="Player 1"><br>
+        <input type="text" id="modify2" placeholder="Player 2"><br>
+        <input type="text" id="modify3" placeholder="Player 3"><br>
+        <input type="text" id="modify4" placeholder="Player 4"><br>
+        <button id="submitButton">Submit</button>
+    </div>
+    <div class="active" id="modalOverlay"></div>
 
+    <!-- script section -->
+    <script src="teeTimeCreator.js"></script>
+        <script src="teeSheetManager.js"></script>
+        <script src="dateDisplay.js"></script>
+        <script src="dateHandler.js"></script>
+        <script src="teeTimeHandler.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                fillTeeTimeSelect("teeTimeSelectStart");
+                fillTeeTimeSelect("teeTimeSelectEnd");
+                fillInIntervals();
+                fillInCartCount();
+                fillInPlayerCount();
+                dateDisplay();
+                fillDateSelects(); 
+            });
+        </script>
+        <?php
+            $date = date("n/j/Y"); 
+            echo "$date";
+            $sql = "SELECT * FROM teesheets WHERE date = '$date';";
+            $result = mysqli_query($conn, $sql); 
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0){
+                $row = mysqli_fetch_assoc($result);
+                $startOfDay = $row['startOfDay'];
+                $endOfDay = $row['endOfDay'];
+                $intrvl = $row['intrvl'];
+                echo "<script type='text/javascript'>createTeeSheet('$startOfDay', '$endOfDay', '$intrvl');</script>";
+            }else{
+                echo "please create a teesheet for today";
+            }
+        ?>
 </body>
 
 </html>

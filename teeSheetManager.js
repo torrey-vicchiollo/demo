@@ -7,16 +7,18 @@ function formatTeeSheetFromHTML(){
 
     //gets interval value from select box
     let interval = parseInt(document.getElementById("intervalSelector").value);
-    //gets the whole table from the html
-    let teeSheet = document.getElementById("teeTimesTable");
 
-    createTeeSheet(startTime, endTime, interval, teeSheet);
+    createTeeSheet(startTime, endTime, interval);
 }
 
 
-function createTeeSheet(startTime, endTime, interval, teeSheet) {
-
-
+function createTeeSheet(startTime, endTime, interval) {
+    var teeSheet = document.getElementById('teeTimesTable');
+    if (teeSheet != null){
+        console.log("teeSheet detected");
+    }else{
+        console.log("no teeSheet detected");
+    }
 
     //checks if the table has content in it by looking at if it has any rows
     if (checkTableContent("teeTimesTable")) {
