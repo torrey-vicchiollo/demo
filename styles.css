@@ -243,7 +243,7 @@ div.sticky {
     z-index: 1000; /* Ensure modal appears on top */
     background-color: white;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid #041025;
     border-radius: 5px;
     visibility: hidden; /* Hide modal by default */
 }
@@ -260,7 +260,7 @@ div.sticky {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #041025;
     cursor: pointer;
 
 
@@ -295,12 +295,26 @@ div.sticky {
     pointer-events: all;
 }
 
-#modifyTeeTime , #deleteTeeTime{
-    visibility: hidden;
-    color: black;
-    background-color: white;
-    border: 1px solid black;
+#modifyDiv, #delTTDiv{
+    float: left;
+}
 
+#delTSDiv{
+    float: right;
+}
+
+#modifyTeeTime, #deleteTeeTime, #deleteTeeSheet{
+    visibility: hidden;
+    color: #041025;
+    background-color: white;
+    border: 1px solid #041025;
+    transition: 0.1s;
+}
+
+#modifyTeeTime:hover, #deleteTeeTime:hover, #deleteTeeSheet:hover{
+    color: white;
+    background-color: #041025;
+    border: 1px solid #041025;
 }
 
 #deleteTeeTime{

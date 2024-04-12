@@ -66,10 +66,21 @@
             <div>
                 <p id="teeTableTitle">today's tee sheet</p>
                 <div id="teeTimeButtons">
-                    <form id="deleteTeeTimeForm" action="includes/deleteTeeSheet.inc.php" method="POST">
-                        <button id="modifyTeeTime" type="button" onclick="modifyTeeTime()">Modify</button>
-                        <button id="deleteTeeTime" type="submit" name="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
-                    </form>
+                    <div id="modifyDiv">
+                        <form id="modifyTeeTimeForm">
+                            <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
+                        </form>
+                    </div>
+                    <div id="delTTDiv">
+                        <form id="deleteTeeTimeForm">
+                            <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
+                        </form>
+                    </div>
+                    <div id="delTSDiv">
+                        <form id="deleteTeeSheetForm" action="includes/deleteTeeSheet.inc.php" method="POST">
+                            <button id="deleteTeeSheet" type="submit" name="deleteTeeSheet">Delete Sheet</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <br>
@@ -157,8 +168,6 @@
                 $endOfDay = $row['endOfDay'];
                 $intrvl = $row['intrvl'];
                 echo "<script type='text/javascript'>createTeeSheet('$startOfDay', '$endOfDay', '$intrvl');</script>";
-            }else{
-                echo "please create a teesheet for today";
             }
         ?>
 </body>

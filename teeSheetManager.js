@@ -81,6 +81,7 @@ function createTeeSheet(startTime, endTime, interval) {
         //buttons now visible
         document.getElementById("modifyTeeTime").style.visibility = 'visible';
         document.getElementById("deleteTeeTime").style.visibility = 'visible';
+        document.getElementById("deleteTeeSheet").style.visibility = 'visible';
     }
 
 }
