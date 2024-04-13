@@ -19,7 +19,7 @@
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
         <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
-            <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()" type="submit"><b>+</b></button>
+            <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()"><b>+</b></button>
 
             <label for="teeTimeSelectStart">Start Time</label>
             <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
@@ -45,15 +45,27 @@
 
     <!-- tee time insert section -->
     <div id="insert">
-        <button id="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
-        <label for="timeInput">Tee Time</label>
-        <select id="timeInput"></select>
-        <label for="bookerInput">Booker</label>
-        <input id="bookerInput" type="text" size="18" placeholder="Last, First">
-        <label for="golferCountInput">Golfer(s)</label>
-        <select id="golferCountInput"></select>
-        <label for="cartCountInput">Cart(s)</label>
-        <select id="cartCountInput"></select>
+        <form id="teeTimeForm" action="includes/teeTimeSubmit.inc.php" method="POST">
+            <button id="insertButton" name="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
+
+            <label for="timeInput">Tee Time</label>
+            <select id="timeInput" name="timeInput"></select>
+
+            <label for="bookerInput">Booker</label>
+            <input id="bookerInput" name="bookerInput" type="text" size="18" placeholder="Last, First">
+
+            <label for="golferCountInput">Golfer(s)</label>
+            <select id="golferCountInput" name="golferCountInput"></select>
+
+            <label for="yearForTeeTime">Year</label>
+            <select id="yearForTeeTime" name="yearForTeeTime"></select>
+
+            <label for="monthForTeeTime">Month</label>
+            <select id="monthForTeeTime" name="monthForTeeTime"></select>
+
+            <label for="dayForTeeTime">Day</label>
+            <select id="dayForTeeTime" name="dayForTeeTime"></select>
+        </form>
     </div>
 
     <br>
@@ -150,15 +162,15 @@
                 fillTeeTimeSelect("teeTimeSelectStart");
                 fillTeeTimeSelect("teeTimeSelectEnd");
                 fillInIntervals();
-                fillInCartCount();
                 fillInPlayerCount();
                 dateDisplay();
                 fillDateSelects(); 
             });
         </script>
+
+        <!-- load in today's sheet -->
         <?php
             $date = date("n/j/Y"); 
-            echo "$date";
             $sql = "SELECT * FROM teesheets WHERE date = '$date';";
             $result = mysqli_query($conn, $sql); 
             $resultCheck = mysqli_num_rows($result);
@@ -168,6 +180,22 @@
                 $endOfDay = $row['endOfDay'];
                 $intrvl = $row['intrvl'];
                 echo "<script type='text/javascript'>createTeeSheet('$startOfDay', '$endOfDay', '$intrvl');</script>";
+            }
+        ?>
+
+        <!-- load in today's times -->
+        <?php
+            $date = date("n/j/Y"); 
+            $sql = "SELECT * FROM teetimes WHERE date = '$date';";
+            $result = mysqli_query($conn, $sql); 
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $time = $row['time'];
+                    $booker = $row['booker'];
+                    $num = $row['num'];
+                    echo "<script type='text/javascript'>addTeeTime('$time', '$booker', '$num');</script>";
+                }
             }
         ?>
 </body>

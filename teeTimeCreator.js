@@ -1,24 +1,19 @@
 function addTeeTimeFromHTML(){
-    let teeSheet = document.getElementById("teeTimesTable");
     let time = document.getElementById("timeInput").value;
     let booker = document.getElementById("bookerInput").value;
     let playerCount = parseInt(document.getElementById("golferCountInput").value); // Convert to integer
-    addTeeTime(teeSheet,time,booker,playerCount);
+    addTeeTime(time, booker, playerCount);
 }
 
 //add the parameters
-function addTeeTime(teeSheet,time,booker,playerCount) {
+function addTeeTime(time, booker, playerCount) {
+    var teeSheet = document.getElementById("teeTimesTable");
     let playerSlot = 0;
-    if (booker.length <= 1) {
-        alert("Please enter a name longer than 1 char");
-        return;
-    }
-    // console.log("Input values:", time, booker, playerCount, cartCount);
 
     // Iterate through each row of the table
     for (let i = 0; i < teeSheet.rows.length; i++) {
         const row = teeSheet.rows[i];
-        // console.log("Row content:", row.cells[1].textContent);
+        console.log("Row content:", row.length);
 
         // Check if the time in the second cell matches the input time
         if (row.cells[1].textContent.trim() === time.trim()) {
