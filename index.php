@@ -2,7 +2,7 @@
 <html lang="en">                                                                     
 
 <head>
-    
+
     <meta charset="UTF-8">
     <title>launch angle</title>
     <link rel="stylesheet" href="styles.css">
@@ -30,22 +30,22 @@
         <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
             <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()"><b>+</b></button>
 
-            <label for="teeTimeSelectStart">Start Time</label>
+            <label for="teeTimeSelectStart">start time&nbsp;</label>
             <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
 
-            <label for="teeTimeSelectEnd">End Time</label>
+            <label for="teeTimeSelectEnd">end time&nbsp;</label>
             <select id="teeTimeSelectEnd" name="teeTimeSelectEnd"></select>
 
-            <label for="intervalSelector">Interval</label>
+            <label for="intervalSelector">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;interval&nbsp;</label>
             <select id="intervalSelector" name="intervalSelector"></select>
 
-            <label for="yearForTeeSheet">Year</label>
+            <label for="yearForTeeSheet">year&nbsp;</label>
             <select id="yearForTeeSheet" name="yearForTeeSheet"></select>
 
-            <label for="monthForTeeSheet">Month</label>
+            <label for="monthForTeeSheet">month&nbsp;</label>
             <select id="monthForTeeSheet" name="monthForTeeSheet"></select>
 
-            <label for="dayForTeeSheet">Day</label>
+            <label for="dayForTeeSheet">day&nbsp;</label>
             <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
         </form>
     </div>
@@ -57,22 +57,22 @@
         <form id="teeTimeForm" action="includes/teeTimeSubmit.inc.php" method="POST">
             <button id="insertButton" name="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
 
-            <label for="timeInput">Tee Time</label>
+            <label for="timeInput">tee time&nbsp;&nbsp;&nbsp;</label>
             <select id="timeInput" name="timeInput"></select>
 
-            <label for="bookerInput">Booker</label>
-            <input id="bookerInput" name="bookerInput" type="text" size="18" placeholder="Last, First">
+            <label for="bookerInput">booker&nbsp;</label>
+            <input id="bookerInput" name="bookerInput" type="text" size="18" placeholder="last, first">
 
-            <label for="golferCountInput">Golfer(s)</label>
+            <label for="golferCountInput">golfer(s)&nbsp;</label>
             <select id="golferCountInput" name="golferCountInput"></select>
 
-            <label for="yearForTeeTime">Year</label>
+            <label for="yearForTeeTime">year&nbsp;</label>
             <select id="yearForTeeTime" name="yearForTeeTime"></select>
 
-            <label for="monthForTeeTime">Month</label>
+            <label for="monthForTeeTime">month&nbsp;</label>
             <select id="monthForTeeTime" name="monthForTeeTime"></select>
 
-            <label for="dayForTeeTime">Day</label>
+            <label for="dayForTeeTime">day&nbsp;</label>
             <select id="dayForTeeTime" name="dayForTeeTime"></select>
         </form>
     </div>
