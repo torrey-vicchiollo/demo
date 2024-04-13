@@ -46,9 +46,11 @@ label {
     width: 100%;
 }
 
+
+
 #headerTitle {
     font-size: 30px;
-    color: white;
+    color: #FFFFFF;
     font-weight: bold;
     padding-left: 9.5%;
     padding-bottom: 12px;
@@ -58,7 +60,7 @@ label {
 
 #dateDisplay {
     padding-left: 9.5%;
-    color: #041025;
+    color: #FFFFFF;
     font-size: 30px;
     font-family: Garamond, serif;
     font-weight: bold;
@@ -143,7 +145,7 @@ label {
     border-collapse: collapse;
     float: left;
     padding: 24px;
-    width: 70%;
+    width: 75%;
     overflow: auto;
 }
 
@@ -184,7 +186,7 @@ th {
     border: 1px solid #04AA6D;
     float: right;
     padding: 24px;
-    width: 25%;
+    width: 20%;
     height: 30%;
     word-wrap: break-word;
 }

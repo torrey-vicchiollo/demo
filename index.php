@@ -2,19 +2,28 @@
 <html lang="en">                                                                     
 
 <head>
+    
     <meta charset="UTF-8">
     <title>launch angle</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
+
 </head>
 
 <body>
+
     <!-- header -->
     <div id="header">
-        <p id="headerTitle">launch angle</p>
+        <p id="headerTitle">
+            launch angle 
+            &emsp; &emsp; &emsp; &emsp;
+            &emsp; &emsp; &emsp; &emsp;
+            &emsp; &emsp; &emsp; &emsp; 
+            &emsp; &emsp; &emsp; &emsp; 
+            &emsp; &emsp; &emsp;
+            <span id="dateDisplay"></span>
+        </p>
     </div>
-
-    <p id="dateDisplay"></p>
 
     <!-- tee sheet section -->
     <div id="teeSheetCreation">
@@ -125,7 +134,7 @@
                 }
             ?>
             <form id="notesForm" action="includes/notesSubmit.inc.php" method="POST">
-                <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="34"
+                <textarea id="notesTextArea" name="notesTextArea" rows="6" cols="24"
                     placeholder="enter daily notes here"></textarea>
                 <br>
                 <br>

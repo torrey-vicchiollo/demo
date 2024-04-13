@@ -1,20 +1,28 @@
 <?php
-    include_once 'dbh.inc.php';                                                     //gets connection to database
-    $date = date("n/j/Y");                                                          //sets date variable to current date
-    $body = " ";                                                                    //initialize body variable
+    include_once 'dbh.inc.php';
+    $date = date("n/j/Y");
+    $body = " ";
 
-    #this is the first check to see and get existing notes
-    $sql = "SELECT * FROM notes WHERE date = '$date';";                             //first call which gets existing body from current date   
-    $result = mysqli_query($conn, $sql);                                            //sets result variable
-    $resultCheck = mysqli_num_rows($result);                                        //sets result check variable
-    if($resultCheck > 0){                                                           //if there's a result
-        while($row = mysqli_fetch_assoc($result)){                                  //fetch row
-            $body = $row['body'];                                                   //body = row
+    #check for teesheet
+    $sql = "SELECT * FROM teesheets WHERE date = '$date';";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if ($resultCheck > 0){
+
+        #this is the first check to see and get existing notes
+        $sql = "SELECT * FROM notes WHERE date = '$date';";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $body = $row['body'];
+            }
         }
-    }
 
-    #update notes to database
-    $body = $body . "→" . $_POST['notesTextArea'] . "<br>";                         //body = fetched body + textarea
-    $sql = "REPLACE INTO notes (date, body) VALUES ('$date', '$body');";            //second sql call
-    mysqli_query($conn, $sql);                                                      //connect and query to database
-    header("Location: ../index.php");                                               //send back to index.php
+        #update notes to database
+        $body = $body . "→" . $_POST['notesTextArea'] . "<br>";
+        $sql = "REPLACE INTO notes (date, body) VALUES ('$date', '$body');";
+        mysqli_query($conn, $sql);
+
+    }
+    header("Location: ../index.php");
