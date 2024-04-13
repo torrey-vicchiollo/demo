@@ -20,7 +20,7 @@
             &emsp; &emsp; &emsp; &emsp;
             &emsp; &emsp; &emsp; &emsp; 
             &emsp; &emsp; &emsp; &emsp; 
-            &emsp; &emsp; &emsp;
+            &emsp; &emsp;
             <span id="dateDisplay"></span>
         </p>
     </div>
