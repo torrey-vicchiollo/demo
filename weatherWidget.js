@@ -81,10 +81,8 @@ function displayCurrentWeather(data) {
         weatherInfo.innerHTML = `<p>${data.message}</p>`
     } else {
         const date = new Date();
-        const day = date.getDay();
         // Returns temperature in fahrenheit
         const temperature = Math.round((data.main.temp - 273.15) * 1.8 + 32);
-        currentDay.innerHTML = getDay(day);
         const desc = data.weather[0].description;
         const iconCode = data.weather[0].icon;
         const iconURL = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
