@@ -1,9 +1,12 @@
-
 function closeModal() {
     let modal = document.getElementById("modal");
     modal.style.visibility = "hidden";
 }
 
+function showModal() {
+    let modal = document.getElementById("modal");
+    modal.style.visibility = "visible";
+}
 
 function initializeModal() {
     let closeButton = document.getElementById("modalCloseButton");

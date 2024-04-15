@@ -72,12 +72,14 @@ function createTeeSheet(startTime, endTime, interval) {
         fillTimeIntervals(currentTime);
 
         // Increment currentTime by the interval (in minutes)
+        
+        console.log(currentTime);
         let [hours, minutes] = currentTime.split(":").map(Number);
+        interval = parseInt(interval);
         minutes += interval;
         hours += Math.floor(minutes / 60);
         minutes %= 60;
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
-        
         //buttons now visible
         document.getElementById("modifyTeeTime").style.visibility = 'visible';
         document.getElementById("deleteTeeTime").style.visibility = 'visible';
@@ -106,6 +108,8 @@ function calcAmountOfTimes(sTime, eTime, interval) {
 
     // Calculate number of intervals
     const numberOfIntervals = Math.ceil(timeDifference / interval);
+
+    console.log(numberOfIntervals);
 
     return numberOfIntervals;
 

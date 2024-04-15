@@ -1,4 +1,5 @@
 function modifyTeeTime() {
+    console.log("made it to modifytee time");
     let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
     
     checkedCheckboxes.forEach(function(checkbox) {
@@ -13,12 +14,17 @@ function modifyTeeTime() {
 
             // Check if the time slot ID matches the checkbox ID
             if (timeCell.textContent === timeSlotId) {
-                
+                // Show the modal
+                showModal();
                 break;
             }
         }
-    });
+    }); 
 }
+
+
+
+
 
 function deleteTeeTime() {
     let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
