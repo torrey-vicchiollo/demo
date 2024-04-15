@@ -80,8 +80,6 @@
     <!-- weather widget -->
     <div id="weather-container">
 
-        <button onclick="getWeather()">Search</button>
-
         <div id="current-day"></div>
 
         <img id="weather-icon" alt="Weather Icon">
@@ -190,7 +188,8 @@
                 fillInIntervals();
                 fillInPlayerCount();
                 dateDisplay();
-                fillDateSelects(); 
+                fillDateSelects();
+                getWeather();
             });
         </script>
 
