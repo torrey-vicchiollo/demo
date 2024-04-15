@@ -76,6 +76,22 @@
             <select id="dayForTeeTime" name="dayForTeeTime"></select>
         </form>
     </div>
+    
+    <!-- weather widget -->
+    <div id="weather-container">
+
+        <button onclick="getWeather()">Search</button>
+
+        <div id="current-day"></div>
+
+        <img id="weather-icon" alt="Weather Icon">
+
+        <div id="temp-div"></div>
+
+        <div id="weather-info"></div>
+
+        <div id="hourly-forecast"></div>
+    </div>
 
     <br>
 
@@ -164,6 +180,7 @@
         <script src="dateDisplay.js"></script>
         <script src="dateHandler.js"></script>
         <script src="teeTimeHandler.js"></script>
+        <script src="weatherWidget.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
         </script>
         <script>
