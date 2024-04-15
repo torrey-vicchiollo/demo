@@ -25,75 +25,82 @@
         </p>
     </div>
 
-    <!-- tee sheet section -->
-    <div id="teeSheetCreation">
-        <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
-            <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()"><b>+</b></button>
+    <div id="upper">
 
-            <label for="teeTimeSelectStart">start time&nbsp;</label>
-            <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
+        <div id="creationSection">
 
-            <label for="teeTimeSelectEnd">end time&nbsp;</label>
-            <select id="teeTimeSelectEnd" name="teeTimeSelectEnd"></select>
+            <!-- tee sheet section -->
+            <div id="teeSheetCreation">
 
-            <label for="intervalSelector">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;interval&nbsp;</label>
-            <select id="intervalSelector" name="intervalSelector"></select>
+                <form id="teeSheetForm" action="includes/teeSheetSubmit.inc.php" method="POST">
+                    <button id="createButton" name="createButton" onclick="formatTeeSheetFromHTML()"><b>+</b></button>
 
-            <label for="yearForTeeSheet">year&nbsp;</label>
-            <select id="yearForTeeSheet" name="yearForTeeSheet"></select>
+                    <label for="teeTimeSelectStart">start time</label>
+                    <select id="teeTimeSelectStart" name="teeTimeSelectStart"></select>
 
-            <label for="monthForTeeSheet">month&nbsp;</label>
-            <select id="monthForTeeSheet" name="monthForTeeSheet"></select>
+                    <label for="teeTimeSelectEnd">end time</label>
+                    <select id="teeTimeSelectEnd" name="teeTimeSelectEnd"></select>
 
-            <label for="dayForTeeSheet">day&nbsp;</label>
-            <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
-        </form>
-    </div>
+                    <label for="intervalSelector">interval</label>
+                    <select id="intervalSelector" name="intervalSelector"></select>
 
-    <br>
+                    <label for="yearForTeeSheet">year</label>
+                    <select id="yearForTeeSheet" name="yearForTeeSheet"></select>
 
-    <!-- tee time insert section -->
-    <div id="insert">
-        <form id="teeTimeForm" action="includes/teeTimeSubmit.inc.php" method="POST">
-            <button id="insertButton" name="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
+                    <label for="monthForTeeSheet">month</label>
+                    <select id="monthForTeeSheet" name="monthForTeeSheet"></select>
 
-            <label for="timeInput">tee time&nbsp;&nbsp;&nbsp;</label>
-            <select id="timeInput" name="timeInput"></select>
+                    <label for="dayForTeeSheet">day</label>
+                    <select id="dayForTeeSheet" name="dayForTeeSheet"></select>
+                </form>
 
-            <label for="bookerInput">booker&nbsp;</label>
-            <input id="bookerInput" name="bookerInput" type="text" size="18" placeholder="last, first">
+            </div>
 
-            <label for="golferCountInput">golfer(s)&nbsp;</label>
-            <select id="golferCountInput" name="golferCountInput"></select>
+            <br>
 
-            <label for="yearForTeeTime">year&nbsp;</label>
-            <select id="yearForTeeTime" name="yearForTeeTime"></select>
+            <!-- tee time insert section -->
+            <div id="insert">
 
-            <label for="monthForTeeTime">month&nbsp;</label>
-            <select id="monthForTeeTime" name="monthForTeeTime"></select>
+                <form id="teeTimeForm" action="includes/teeTimeSubmit.inc.php" method="POST">
+                    <button id="insertButton" name="insertButton" onclick="addTeeTimeFromHTML()"><b>+</b></button>
 
-            <label for="dayForTeeTime">day&nbsp;</label>
-            <select id="dayForTeeTime" name="dayForTeeTime"></select>
-        </form>
-    </div>
+                    <label for="timeInput">tee time</label>
+                    <select id="timeInput" name="timeInput"></select>
+
+                    <label for="bookerInput">booker</label>
+                    <input id="bookerInput" name="bookerInput" type="text" size="8" placeholder="last, first">
+
+                    <label for="golferCountInput">golfer(s)</label>
+                    <select id="golferCountInput" name="golferCountInput"></select>
+
+                    <label for="yearForTeeTime">year</label>
+                    <select id="yearForTeeTime" name="yearForTeeTime"></select>
+
+                    <label for="monthForTeeTime">month</label>
+                    <select id="monthForTeeTime" name="monthForTeeTime"></select>
+
+                    <label for="dayForTeeTime">day</label>
+                    <select id="dayForTeeTime" name="dayForTeeTime"></select>
+                </form>
+
+            </div>
+
+        </div>
 
     <div id="date-selector-container">
         <label for="teeTimeDate">date&nbsp;</label>
         <select id="teeTimeDate" name="teeTimeDate"></select>
     </div>
     
-    <!-- weather widget -->
-    <div id="weather-container">
-       
-        <div id="current-day"></div>
+        <!-- weather widget -->
+        <div id="weather-container">
+                   <div id="current-day"></div>
+            <img id="weather-icon" alt="Weather Icon">
+            <div id="temp-div"></div>
+            <div id="weather-info"></div>
+            <div id="hourly-forecast"></div>
+        </div>
 
-        <img id="weather-icon" alt="Weather Icon">
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
     </div>
 
     <br>
@@ -138,7 +145,7 @@
 
         <!-- notes section -->
         <div id="notes" class="sticky">
-            <p id="notesTitle">today's notes</p>
+            <p id="notesTitle">daily notes</p>
             <?php
                 $date = date("n/j/Y");
                 $sql = "SELECT * FROM notes WHERE date = '$date';";
@@ -157,8 +164,10 @@
                     placeholder="enter daily notes here"></textarea>
                 <br>
                 <br>
+                <br>
                 <button id="notesButton" type="submit" name="notesSubmit"><b>+</b></button>
             </form>
+
         </div>
 
     </div>
