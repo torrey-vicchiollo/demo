@@ -14,6 +14,7 @@ function formatTeeSheetFromHTML(){
 
 function createTeeSheet(startTime, endTime, interval) {
     var teeSheet = document.getElementById('teeTimesTable');
+    interval = parseInt(interval);
     if (teeSheet != null){
         console.log("teeSheet detected");
     }else{
