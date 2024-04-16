@@ -123,6 +123,18 @@
                                 <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
                             </form>
                         </div>
+                        <div>
+                            <form id="modifyTeeTimeTextBox">
+
+                            <label for="modifyTextBoxOne">modify: </label>
+                            <input id="modifyTextBoxOne" name="bookerInput" type="text" size="8" placeholder="last, first">
+                            <input id="modifyTextBoxTwo" name="bookerInput" type="text" size="8" placeholder="last, first">
+                            <input id="modifyTextBoxThree" name="bookerInput" type="text" size="8" placeholder="last, first">
+                            <input id="modifyTextBoxFour" name="bookerInput" type="text" size="8" placeholder="last, first">
+
+                                
+                            </form>
+                        </div>
                         <div id="delTSDiv">
                             <form id="deleteTeeSheetForm" action="includes/deleteTeeSheet.inc.php" method="POST">
                                 <button id="deleteTeeSheet" type="submit" name="deleteTeeSheet">Delete Sheet</button>
@@ -166,20 +178,6 @@
                 </form>
             </div>
         </div>
-        
-        <div class="modal active" id="modal">
-        <div id="modalHeader">
-            <div id="modalTitle"></div>
-            <button id="modalCloseButton">&times;</button>
-        </div>
-        <div id="modalBody">
-            <input type="text" id="modify1" placeholder="Player 1"><br>
-            <input type="text" id="modify2" placeholder="Player 2"><br>
-            <input type="text" id="modify3" placeholder="Player 3"><br>
-            <input type="text" id="modify4" placeholder="Player 4"><br>
-            <button id="submitButton">Submit</button>
-        </div>
-        <div class="active" id="modalOverlay"></div>
 
         <!-- script section -->
         <script src="teeTimeCreator.js"></script>

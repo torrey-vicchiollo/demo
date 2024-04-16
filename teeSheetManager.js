@@ -198,39 +198,3 @@ function checkTableContent(tableId) {
 }
 
 
-function handleDeleteButtonClick(currentTime) {
-    //needs to return function so it saves the current time when the method was created
-    return function () {
-        let modal = document.getElementById("modal");
-        let header = document.getElementById("modalHeader");
-        let title = document.getElementById("modalTitle");
-        let deleteButton = document.getElementById("modalDeleteButton");
-        let body = document.getElementById("modalBody");
-        modal.style.visibility = "visible";
-        header.style.visibility = "visible";
-        title.style.visibility = "visible";
-        deleteButton.style.visibility = "visible";
-        body.style.visibility = "visible";
-        title.text = currentTime;
-
-
-
-
-    };
-}
-
-// Function to handle edit button click
-// function handleEditButtonClick(currentTime) {
-//     //needs to return function so it saves the current time when the method was created
-//     return function () {
-//         let modal = document.getElementById("modal");
-//         let header = document.getElementById("modalHeader");
-//         let Title = document.getElementById("modalTitle");
-//         let deleteButton = document.getElementById("modalDeleteButton");
-//         let body = document.getElementById("modalBody");
-
-
-//     };
-// }
-
-

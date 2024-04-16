@@ -1,6 +1,14 @@
-function modifyTeeTime() {
+//I need to get a 2d array of the selected boxes so the php can get it then send it into the method
+function modifyfromHtml(){
+    
+    modifyTeeTime();
+}
+
+function modifyTeeTime(date,playerCount,time,booker) {
     console.log("made it to modifytee time");
     let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
+
+
     
     checkedCheckboxes.forEach(function(checkbox) {
         let checkboxId = checkbox.id;
@@ -14,16 +22,18 @@ function modifyTeeTime() {
 
             // Check if the time slot ID matches the checkbox ID
             if (timeCell.textContent === timeSlotId) {
-                // Show the modal
-                showModal();
-                break;
+                
             }
         }
     }); 
 }
 
+//I need to get a 2d array of the selected boxes so the php can get it then send it into the method
 
-
+function deletefromHtml(){
+    
+    deleteTeeTime();
+}
 
 
 function deleteTeeTime() {

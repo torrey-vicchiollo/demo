@@ -257,48 +257,7 @@ div.sticky {
     color: white;
 }
 
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure modal appears on top */
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #041025;
-    border-radius: 5px;
-    visibility: hidden; /* Hide modal by default */
-}
 
-.modal.active{
-    transform: translate(30%, 10%) scale(1);
-}
-#modalCloseButton{
-    visibility: hidden;
-}
-#modalHeader{
-    visibility: hidden;
-    padding: 10px, 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #041025;
-    cursor: pointer;
-
-
-}
-
-#modalHeader, #modalTitle{
-    visibility: hidden;
-
-    font-weight: bold;
-}
-
-#modalBody{
-    visibility: hidden;
-
-    padding: 10px, 15px;
-}
 
 #overlay{
     position: fixed;
