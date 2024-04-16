@@ -10,12 +10,13 @@ BLACK -      #041025
 }
 
 html {
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 body {
     background-color: #FFFFFF;
     margin: auto;
+    overflow: auto;
 }
 
 button {
@@ -66,12 +67,25 @@ label {
     font-weight: bold;
 }
 
+/* upper section */
+#upper {
+    width: 84%;
+    column-gap: 44px;
+    display: flex;
+    margin: auto;
+}
+
+#creationSection {
+    float: left;
+    width: 75%
+}
+
 /* tee sheet creation section */
 #teeSheetCreation {
     background-color: #DBEDE1;
     margin: auto;
-    padding: 12px;
-    width: 82%;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 #createButton {
@@ -79,10 +93,10 @@ label {
     border: 1px solid #041025;
     border-radius: 50%;
     color: #041025;
-    font-size: 12px;
+    font-size: 15px;
     padding: 6px;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     transition: 0.1s;
     margin-right: 36px;
 }
@@ -92,14 +106,12 @@ label {
     color: white;
 }
 
-
-
 /* book tee time section */
 #insert {
     background-color: #DBEDE1;
     margin: auto;
-    padding: 12px;
-    width: 82%;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 #insertButton {
@@ -107,10 +119,10 @@ label {
     border: 1px solid #041025;
     border-radius: 50%;
     color: #041025;
-    font-size: 12px;
+    font-size: 15px;
     padding: 6px;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     transition: 0.1s;
     margin-right: 36px;
 }
@@ -127,6 +139,11 @@ label {
     color: #041025;
 }
 
+#weather-container {    
+    background-color: #DBEDE1;
+    width: 21%;
+    float: right;
+}
 
 
 /* main section */
@@ -155,7 +172,11 @@ label {
     font-family: Garamond, serif;
     font-weight: bold;
     float: left;
-    width: 30%;
+}
+
+#teeSheetGenerationForm {
+    padding-top: 32px;
+    float: right;
 }
 
 #teeTimesTable {
@@ -163,11 +184,11 @@ label {
 }
 
 th, td {
-    font-size: 14px;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 16px;
+    padding-left: 66px;
+    padding-right: 66px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-align: center;
     border: 1px solid black;
     
@@ -182,8 +203,7 @@ th {
 
 /* notes section */
 #notes {
-    background-color: white;
-    border: 1px solid #04AA6D;
+    background-color: #DBEDE1;
     float: right;
     padding: 24px;
     width: 20%;
@@ -205,7 +225,7 @@ div.sticky {
 }
 
 #notesBody {
-    color: red;
+    color: #ff7070;
     font-size: 16px;
     font-style: bold, italic;
 }
@@ -225,10 +245,10 @@ div.sticky {
     border: 1px solid #041025;
     border-radius: 50%;
     color: #041025;
-    font-size: 12px;
+    font-size: 15px;
     padding: 6px;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     transition: 0.1s;
 }
 
@@ -313,10 +333,23 @@ div.sticky {
     transition: 0.1s;
 }
 
-#modifyTeeTime:hover, #deleteTeeTime:hover, #deleteTeeSheet:hover{
+#teeSheetGenerationSubmit{
+    color: #041025;
+    background-color: white;
+    border: 1px solid #041025;
+    transition: 0.1s;
+}
+
+#modifyTeeTime:hover, #teeSheetGenerationSubmit:hover{
     color: white;
     background-color: #041025;
     border: 1px solid #041025;
+}
+
+#deleteTeeTime:hover, #deleteTeeSheet:hover{
+    color: white;
+    background-color: #ff7070;
+    border: 1px solid #ff7070;
 }
 
 #deleteTeeTime{
@@ -327,60 +360,61 @@ div.sticky {
     background-color: white;
 }
 
-#teeTimeButtons{
-    float: right;
-    width: 70%;
-    margin-top: 26px;
-}
-
 #weather-container {
-    background: #04AA6D;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background-color: #DBEDE1;
+    padding-inline: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    color: black;
 }
 
 #temp-div p {
     font-family: Garamond, serif;
-    font-size: 60px;
-    margin-top: -30px;
-    color: white;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: -8px;
+    color: black;
 }
 
 #current-day {
     font-family: Garamond, serif;
-    font-size: 50px;
+    font-size: 12px;
     margin-bottom: -10px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    color: white;
+    color: black;
 }
 
 #weather-info {
     font-family: Garamond, serif;
-    font-size: 20px;
-    color: white;
+    font-size: 14px;
+    color: black;
 }
 
 #weather-icon {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 10px;
-    margin-bottom: 0;
+    margin-bottom: -30px;
+    margin-left: 25px;
+    margin-right: -11px;
+    margin-top: -10px;
     display: none;
+    float: left;
 }
 
 #hourly-forecast {
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-inline: auto;
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    color: black;
+    background-color: white;
+    border: 1px solid #04AA6D;
 }
 
 .hourly-item {
@@ -391,12 +425,13 @@ div.sticky {
     flex-direction: column;
     align-items: center;
     margin-right: 10px;
-    color: white;
+    color: black;
+    font-size: 12px;
 }
 
 .hourly-item img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 5px;
 }
 
@@ -406,5 +441,9 @@ div.sticky {
     margin-top: 10px;
 }
 
+#date-selector-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 

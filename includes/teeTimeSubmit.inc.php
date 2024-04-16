@@ -1,5 +1,7 @@
 <?php
     include_once 'dbh.inc.php';
+    session_start();
+    
     $time = $_POST['timeInput'];
     $booker = $_POST['bookerInput'];
     $num = $_POST['golferCountInput'];
