@@ -17,8 +17,6 @@ body {
     background-color: #FFFFFF;
     margin: auto;
     overflow: auto;
-    min-height: 991px;
-    min-width: 1920px;
 }
 
 button {
