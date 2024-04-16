@@ -10,12 +10,15 @@ BLACK -      #041025
 }
 
 html {
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 body {
     background-color: #FFFFFF;
     margin: auto;
+    overflow: auto;
+    min-height: 991px;
+    min-width: 1920px;
 }
 
 button {
@@ -76,7 +79,7 @@ label {
 
 #creationSection {
     float: left;
-    width: 74%
+    width: 75%
 }
 
 /* tee sheet creation section */
@@ -138,8 +141,9 @@ label {
     color: #041025;
 }
 
-#weather-container {
-    width: 20%;
+#weather-container {    
+    background-color: #DBEDE1;
+    width: 21%;
     float: right;
 }
 
@@ -359,19 +363,20 @@ div.sticky {
 }
 
 #weather-container {
-    background: #04AA6D;
-    max-width: 21%;
-    padding: 12px;
+    background-color: #DBEDE1;
+    padding-inline: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    color: black;
 }
 
 #temp-div p {
     font-family: Garamond, serif;
-    font-size: 12px;
-    margin-top: -30px;
-    color: white;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: -8px;
+    color: black;
 }
 
 #current-day {
@@ -381,29 +386,37 @@ div.sticky {
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    color: white;
+    color: black;
 }
 
 #weather-info {
     font-family: Garamond, serif;
-    font-size: 12px;
-    color: white;
+    font-size: 14px;
+    color: black;
 }
 
 #weather-icon {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 10px;
-    margin-bottom: 0;
+    margin-bottom: -30px;
+    margin-left: 25px;
+    margin-right: -11px;
+    margin-top: -10px;
     display: none;
+    float: left;
 }
 
 #hourly-forecast {
-    margin-top: 12px;
+    margin-top: 10px;
+    margin-inline: auto;
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    color: black;
+    background-color: white;
+    border: 1px solid #04AA6D;
 }
 
 .hourly-item {
@@ -414,13 +427,13 @@ div.sticky {
     flex-direction: column;
     align-items: center;
     margin-right: 10px;
-    color: white;
+    color: black;
     font-size: 12px;
 }
 
 .hourly-item img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 5px;
 }
 
@@ -430,5 +443,9 @@ div.sticky {
     margin-top: 10px;
 }
 
+#date-selector-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 
