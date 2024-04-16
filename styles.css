@@ -83,8 +83,8 @@ label {
 #teeSheetCreation {
     background-color: #DBEDE1;
     margin: auto;
-    padding: 16px;
-    padding-top: 38px;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 #createButton {
@@ -109,8 +109,8 @@ label {
 #insert {
     background-color: #DBEDE1;
     margin: auto;
-    padding: 16px;
-    padding-top: 38px;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 #insertButton {
@@ -170,7 +170,11 @@ label {
     font-family: Garamond, serif;
     font-weight: bold;
     float: left;
-    width: 30%;
+}
+
+#teeSheetGenerationForm {
+    padding-top: 32px;
+    float: right;
 }
 
 #teeTimesTable {
@@ -178,11 +182,11 @@ label {
 }
 
 th, td {
-    font-size: 14px;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 16px;
+    padding-left: 66px;
+    padding-right: 66px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-align: center;
     border: 1px solid black;
     
@@ -219,7 +223,7 @@ div.sticky {
 }
 
 #notesBody {
-    color: red;
+    color: #ff7070;
     font-size: 16px;
     font-style: bold, italic;
 }
@@ -327,10 +331,23 @@ div.sticky {
     transition: 0.1s;
 }
 
-#modifyTeeTime:hover, #deleteTeeTime:hover, #deleteTeeSheet:hover{
+#teeSheetGenerationSubmit{
+    color: #041025;
+    background-color: white;
+    border: 1px solid #041025;
+    transition: 0.1s;
+}
+
+#modifyTeeTime:hover, #teeSheetGenerationSubmit:hover{
     color: white;
     background-color: #041025;
     border: 1px solid #041025;
+}
+
+#deleteTeeTime:hover, #deleteTeeSheet:hover{
+    color: white;
+    background-color: #ff7070;
+    border: 1px solid #ff7070;
 }
 
 #deleteTeeTime{
@@ -339,12 +356,6 @@ div.sticky {
 
 #modifyTeeTime{
     background-color: white;
-}
-
-#teeTimeButtons{
-    float: right;
-    width: 70%;
-    margin-top: 26px;
 }
 
 #weather-container {

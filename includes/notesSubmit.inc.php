@@ -1,7 +1,8 @@
 <?php
-    include_once 'dbh.inc.php';
-    $date = date("n/j/Y");
+    include 'dbh.inc.php';
+    session_start();
     $body = " ";
+    $date = $_SESSION["date"];
 
     #check for teesheet
     $sql = "SELECT * FROM teesheets WHERE date = '$date';";

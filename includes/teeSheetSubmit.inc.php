@@ -1,5 +1,7 @@
 <?php
-    include_once 'dbh.inc.php';                                                     //gets connection to database
+    include 'dbh.inc.php';
+    session_start();
+
     $startOfDay = $_POST['teeTimeSelectStart'];                                     //start of day
     $endOfDay = $_POST['teeTimeSelectEnd'];                                         //end of day
     $interval = $_POST['intervalSelector'];                                         //interval
