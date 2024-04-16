@@ -70,14 +70,15 @@ label {
 /* upper section */
 #upper {
     width: 84%;
-    column-gap: 44px;
+    column-gap: 39px;
     display: flex;
     margin: auto;
 }
 
 #creationSection {
     float: left;
-    width: 75%
+    width: 75%;
+    padding-right: -2vh;
 }
 
 /* tee sheet creation section */
@@ -141,8 +142,9 @@ label {
 
 #weather-container {    
     background-color: #DBEDE1;
-    width: 21%;
+    width: 19.5%;
     float: right;
+    margin-left: 1vh;
 }
 
 
