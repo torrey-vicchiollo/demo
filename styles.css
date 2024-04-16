@@ -294,6 +294,10 @@ div.sticky {
     transition: 0.1s;
 }
 
+#modifyTeeTimeTextBox{
+    visibility: hidden;
+}
+
 #teeSheetGenerationSubmit{
     color: #041025;
     background-color: white;
