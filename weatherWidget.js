@@ -55,10 +55,10 @@ function getWeather() {
             .then(data => {
                 displayFutureForecast(data.list, selectedDate);
             })
-            // .catch(err => {
-            //     console.err('Error fetching future forecast:', err);
-            //     alert('Error fetching future forecast. Please try later.');
-            // })
+            .catch(err => {
+                console.err('Error fetching future forecast:', err);
+                alert('Error fetching future forecast. Please try later.');
+            })
     }
 }
 
@@ -206,7 +206,6 @@ function displayFutureForecast(futureData, selectedDate) {
                 time++;
             });
             // load weather information for the div elements
-            console.log(data);
             const temperature = Math.round(data[0].main.temp);
             const desc = data[0].weather[0].description;
             const iconCode = data[0].weather[0].icon;
