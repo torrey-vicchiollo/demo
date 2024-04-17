@@ -133,7 +133,7 @@ label {
     color: white;
 }
 
-#bookerInput {
+input {
     margin-right: 36px;
     border: none;
     border-bottom: 3px solid #04AA6D;
@@ -186,11 +186,11 @@ label {
 }
 
 th, td {
-    font-size: 16px;
-    padding-left: 66px;
-    padding-right: 66px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    font-size: 15px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     border: 1px solid black;
     
@@ -279,12 +279,9 @@ div.sticky {
     pointer-events: all;
 }
 
-#modifyDiv, #delTTDiv{
-    float: left;
-}
-
-#delTSDiv{
-    float: right;
+#teeSheetGenerationForm {
+    padding: 12px;
+    background-color: #DBEDE1;
 }
 
 #modifyTeeTime, #deleteTeeTime, #deleteTeeSheet{
@@ -295,7 +292,16 @@ div.sticky {
     transition: 0.1s;
 }
 
+#modifyTeeTime {
+    margin-right: 20px;
+}
+
+#deleteTeeSheet{
+    margin-right: 35px;
+}
+
 #modifyTeeTimeTextBox{
+    margin-left: -120px;
     visibility: hidden;
 }
 

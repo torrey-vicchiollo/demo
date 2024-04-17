@@ -83,7 +83,6 @@ function createTeeSheet(startTime, endTime, interval) {
         currentTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
         //buttons now visible
         document.getElementById("modifyTeeTime").style.visibility = 'visible';
-        document.getElementById("deleteTeeTime").style.visibility = 'visible';
         document.getElementById("deleteTeeSheet").style.visibility = 'visible';
         document.getElementById("modifyTeeTimeTextBox").style.visibility = 'visible';
     }
@@ -93,6 +92,12 @@ function fillTimeIntervals(time) {
     //creating the options
     let option = document.createElement("option");
     let timeInput = document.getElementById("timeInput");
+    option.value = time;
+    option.text = time;
+    timeInput.appendChild(option);
+
+    option = document.createElement("option");
+    timeInput = document.getElementById("modifyTimeInput");
     option.value = time;
     option.text = time;
     timeInput.appendChild(option);

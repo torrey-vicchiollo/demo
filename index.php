@@ -89,10 +89,9 @@
             <!-- tee table-->
             <div id="teeTable"> 
                 <div>
-                    <div>
-                        <p id="teeTableTitle">
-                            <?php echo "tee sheet for " . $_SESSION["date"]; ?>
-                        </p>
+                    <p id="teeTableTitle">
+                        <?php echo "tee sheet for " . $_SESSION["date"]; ?>
+                    </p>
                         <form id="teeSheetGenerationForm" name="teeSheetGenerationForm" method="POST">
                             <label for="monthForTeeSheetGeneration">month</label>
                             <select id="monthForTeeSheetGeneration" name="monthForTeeSheetGeneration"></select>
@@ -110,33 +109,23 @@
                     <br>
                     <br>
                     <div id="teeTimeButtons">
-                        <div id="modifyDiv">
-                            <form id="modifyTeeTimeForm">
-                                <button id="modifyTeeTime" onclick="modifyTeeTime()">Modify</button>
-                            </form>
-                        </div>
-                        <div id="delTTDiv">
-                            <form id="deleteTeeTimeForm">
-                                <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
-                            </form>
-                        </div>
                         <div id="modifyTeeTimeTextBox">
-                            <form id="modifyTeeTimeTextBoxForm">
-
-                            <label for="modifyTextBoxOne">modify: </label>
-                            <input id="modifyTextBoxOne" name="bookerInput" type="text" size="8" placeholder="last, first">
-                            <input id="modifyTextBoxTwo" name="bookerInput" type="text" size="8" placeholder="last, first">
-                            <input id="modifyTextBoxThree" name="bookerInput" type="text" size="8" placeholder="last, first">
-                            <input id="modifyTextBoxFour" name="bookerInput" type="text" size="8" placeholder="last, first">
-
-                                
-                            </form>
-                        </div>
-                        <div id="delTSDiv">
                             <form id="deleteTeeSheetForm" action="includes/deleteTeeSheet.inc.php" method="POST">
                                 <button id="deleteTeeSheet" type="submit" name="deleteTeeSheet">Delete Sheet</button>
                             </form>
-                        </div>
+                            <form id="modifyTeeTimeForm" action="includes/modifyTeeTime.inc.php" method="POST">
+                                <button id="modifyTeeTime" name="modifyTeeTime">Modify</button>
+                                <label for="modifyTimeInput">tee time</label>
+                                <select id="modifyTimeInput" name="modifyTimeInput"></select>
+                                <label for="bookerInput1">1</label>
+                                <input id="bookerInput1" name="bookerInput1" type="text" size="8" placeholder="last, first">
+                                <label for="bookerInput2">2</label>
+                                <input id="bookerInput2" name="bookerInput2" type="text" size="8" placeholder="last, first">
+                                <label for="bookerInput3">3</label>
+                                <input id="bookerInput3" name="bookerInput3" type="text" size="8" placeholder="last, first">
+                                <label for="bookerInput4">4</label>
+                                <input id="bookerInput4" name="bookerInput4" type="text" size="8" placeholder="last, first">                                
+                            </form>
                     </div>
                 </div>
                 <br>
