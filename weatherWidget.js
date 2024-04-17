@@ -167,7 +167,7 @@ function displayFutureForecast(futureData, selectedDate) {
             futureDataTotal++;
         });
         // if the selected date is not outside of the 5-day window that the forecast provides
-        if (index < 40) {
+        if (index <= 40) {
             let data = [];
             let j = index;
             // skips over data that is provided by the API that is before the user selected date
