@@ -89,9 +89,9 @@
             <!-- tee table-->
             <div id="teeTable"> 
                 <div>
-                    <p id="teeTableTitle">
+                    <span id="teeTableTitle">
                         <?php echo "tee sheet for " . $_SESSION["date"]; ?>
-                    </p>
+                    </span>
                         <form id="teeSheetGenerationForm" name="teeSheetGenerationForm" method="POST">
                             <label for="monthForTeeSheetGeneration">month</label>
                             <select id="monthForTeeSheetGeneration" name="monthForTeeSheetGeneration"></select>
@@ -102,10 +102,6 @@
                             <button id="teeSheetGenerationSubmit" name="teeSheetGenerationSubmit">View Date</button>
                         </form>
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                     <br>
                     <br>
                     <div id="teeTimeButtons">
@@ -128,7 +124,6 @@
                             </form>
                     </div>
                 </div>
-                <br>
                 <table id="teeTimesTable">
                     <thead>
                     </thead>

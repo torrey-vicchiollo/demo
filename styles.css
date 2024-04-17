@@ -170,10 +170,9 @@ input {
 
 #teeTableTitle {
     color: #041025;
-    font-size: 30px;
+    font-size: 50px;
     font-family: Garamond, serif;
     font-weight: bold;
-    float: left;
 }
 
 #teeSheetGenerationForm {
@@ -297,11 +296,11 @@ div.sticky {
 }
 
 #deleteTeeSheet{
+    margin-left: -120px;
     margin-right: 35px;
 }
 
 #modifyTeeTimeTextBox{
-    margin-left: -120px;
     visibility: hidden;
 }
 
