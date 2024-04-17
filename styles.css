@@ -224,6 +224,7 @@ div.sticky {
     font-size: 30px;
     font-family: Garamond, serif;
     font-weight: bold;
+
 }
 
 #notesBody {
@@ -409,6 +410,12 @@ div.sticky {
 #date-selector-container {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#modifyTeeTimeTextBox{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 

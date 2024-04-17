@@ -120,8 +120,8 @@
                                 <button id="deleteTeeTime" onclick="deleteTeeTime()">Delete</button>
                             </form>
                         </div>
-                        <div>
-                            <form id="modifyTeeTimeTextBox">
+                        <div id="modifyTeeTimeTextBox">
+                            <form id="modifyTeeTimeTextBoxForm">
 
                             <label for="modifyTextBoxOne">modify: </label>
                             <input id="modifyTextBoxOne" name="bookerInput" type="text" size="8" placeholder="last, first">
