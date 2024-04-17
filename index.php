@@ -79,9 +79,6 @@
                 <div id="temp-div"></div>
                 <div id="weather-info"></div>
                 <div id="hourly-forecast"></div>
-                <div id="date-selector-container">
-                    <label for="teeTimeDate">date&nbsp;</label>
-                    <select id="teeTimeDate" name="teeTimeDate"></select>
                 </div>
             </div>
         </div>
@@ -200,7 +197,6 @@
                     dateDisplay();
                     fillDateSelects();
                     getWeather();
-                    fillDateSelector("teeTimeDate");
                 });
             </script>
             <?php
