@@ -70,14 +70,15 @@ label {
 /* upper section */
 #upper {
     width: 84%;
-    column-gap: 44px;
+    column-gap: 39px;
     display: flex;
     margin: auto;
 }
 
 #creationSection {
     float: left;
-    width: 75%
+    width: 75%;
+    padding-right: -2vh;
 }
 
 /* tee sheet creation section */
@@ -141,8 +142,9 @@ label {
 
 #weather-container {    
     background-color: #DBEDE1;
-    width: 21%;
+    width: 19.5%;
     float: right;
+    margin-left: 1vh;
 }
 
 
@@ -257,48 +259,7 @@ div.sticky {
     color: white;
 }
 
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure modal appears on top */
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #041025;
-    border-radius: 5px;
-    visibility: hidden; /* Hide modal by default */
-}
 
-.modal.active{
-    transform: translate(30%, 10%) scale(1);
-}
-#modalCloseButton{
-    visibility: hidden;
-}
-#modalHeader{
-    visibility: hidden;
-    padding: 10px, 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #041025;
-    cursor: pointer;
-
-
-}
-
-#modalHeader, #modalTitle{
-    visibility: hidden;
-
-    font-weight: bold;
-}
-
-#modalBody{
-    visibility: hidden;
-
-    padding: 10px, 15px;
-}
 
 #overlay{
     position: fixed;
@@ -331,6 +292,10 @@ div.sticky {
     background-color: white;
     border: 1px solid #041025;
     transition: 0.1s;
+}
+
+#modifyTeeTimeTextBox{
+    visibility: hidden;
 }
 
 #teeSheetGenerationSubmit{
