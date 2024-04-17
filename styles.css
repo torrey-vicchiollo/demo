@@ -53,14 +53,14 @@ label {
     font-size: 30px;
     color: #FFFFFF;
     font-weight: bold;
-    padding-left: 9.5%;
-    padding-bottom: 12px;
-    padding-top: 12px;
+    margin-left: 10%;
+    padding-bottom: 15px;
+    padding-top: 15px;
     font-family: Garamond, serif;
 }
 
 #dateDisplay {
-    padding-left: 9.5%;
+    margin-left: 60%;
     color: #FFFFFF;
     font-size: 30px;
     font-family: Garamond, serif;
