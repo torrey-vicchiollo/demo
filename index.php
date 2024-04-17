@@ -183,7 +183,6 @@
             <script src="dateHandler.js"></script>
             <script src="teeTimeHandler.js"></script>
             <script src="weatherWidget.js"></script>
-            <script src="dateSelector.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
             </script>
             <script>
