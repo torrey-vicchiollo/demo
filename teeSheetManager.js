@@ -44,13 +44,9 @@ function createTeeSheet(startTime, endTime, interval) {
         //create a new row
         const newRow = document.createElement("tr");
 
-        // Create and append the check box as first cell
+        // Create and append the empty thing
         const editCell = document.createElement("td");
-        const editButton = document.createElement("input");
-        editButton.type = "checkbox"; // Set type to checkbox
-        editButton.id = "checkBox" + currentTime;
-        editButton.className = "checkBox";
-        editCell.appendChild(editButton);
+        editCell.style.backgroundColor = "#DBEDE1"; // Set background color with half opacity
         newRow.appendChild(editCell);
 
         // Create and append the second cell as the time of each tee times
