@@ -1,62 +1,40 @@
-//I need to get a 2d array of the selected boxes so the php can get it then send it into the method
-function modifyfromHtml(){
-    
-    modifyTeeTime();
+function addTeeTimeFromHTML(){
+    let time = document.getElementById("timeInput").value;
+    let booker = document.getElementById("bookerInput").value;
+    let playerCount = parseInt(document.getElementById("golferCountInput").value); // Convert to integer
+    addTeeTime(time, booker, playerCount);
 }
 
-function modifyTeeTime(date,playerCount,time,booker) {
-    console.log("made it to modifytee time");
-    let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
+//add the parameters
+function addTeeTime(time, booker, playerCount) {
+    var teeSheet = document.getElementById("teeTimesTable");
+    let playerSlot = 0;
 
+    // Iterate through each row of the table
+    for (let i = 0; i < teeSheet.rows.length; i++) {
+        const row = teeSheet.rows[i];
+        console.log("Row content:", row.length);
 
-    
-    checkedCheckboxes.forEach(function(checkbox) {
-        let checkboxId = checkbox.id;
-        let timeSlotId = checkboxId.replace("checkBox", ""); // Extract the time slot ID
-        
-        // Iterate through table rows to find the corresponding time slot
-        let teeSheet = document.getElementById("teeTimesTable");
-        for (let i = 0; i < teeSheet.rows.length; i++) {
-            const row = teeSheet.rows[i];
-            const timeCell = row.cells[1]; // Assuming the time is in the second cell
-
-            // Check if the time slot ID matches the checkbox ID
-            if (timeCell.textContent === timeSlotId) {
-                
-            }
-        }
-    }); 
-}
-
-//I need to get a 2d array of the selected boxes so the php can get it then send it into the method
-
-function deletefromHtml(){
-    
-    deleteTeeTime();
-}
-
-
-function deleteTeeTime() {
-    let checkedCheckboxes = document.querySelectorAll('.checkBox:checked');
-    
-    checkedCheckboxes.forEach(function(checkbox) {
-        let checkboxId = checkbox.id;
-        let timeSlotId = checkboxId.replace("checkBox", ""); // Extract the time slot ID
-        
-        // Iterate through table rows to find the corresponding time slot
-        let teeSheet = document.getElementById("teeTimesTable");
-        for (let i = 0; i < teeSheet.rows.length; i++) {
-            const row = teeSheet.rows[i];
-            const timeCell = row.cells[1]; // Assuming the time is in the second cell
-
-            // Check if the time slot ID matches the checkbox ID
-            if (timeCell.textContent === timeSlotId) {
-                // Update all tee time columns to "X"
-                for (let j = 2; j < row.cells.length; j++) {
-                    row.cells[j].textContent = "X";
+        // Check if the time in the second cell matches the input time
+        if (row.cells[1].textContent.trim() === time.trim()) {
+            // console.log("Time match found:", time);
+            // Fill the row with the provided information
+            for (let j = 2; j <= 6; j++) { // Adjusted indices to match columns
+                if (row.cells[j].textContent.length <= 1 && playerCount > 0) {
+                    // console.log("found this text content");
+                    row.cells[j].textContent = booker + '/' + (j - 1);
+                    playerCount--;
+                    playerSlot++; // Increment playerSlot only when a slot is filled
+                    // console.log("Player slot:", playerSlot);
                 }
-                break;
+
+
+                if (playerCount === 0) {
+                    break; // Break out of the loop once player count is reached
+                }
             }
+
+            return; // Exit the function after filling the row
         }
-    });
+    }
 }
