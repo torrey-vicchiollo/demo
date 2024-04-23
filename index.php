@@ -156,51 +156,48 @@
         </div>
 
         <!-- script section -->
-        <script src="teeTimeCreator.js"></script>
-            <script src="teeSheetManager.js"></script>
-            <script src="dateDisplay.js"></script>
-            <script src="dateHandler.js"></script>
-            <script src="teeTimeHandler.js"></script>
-            <script src="weatherWidget.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-            </script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    fillTeeTimeSelect("teeTimeSelectStart");
-                    fillTeeTimeSelect("teeTimeSelectEnd");
-                    fillInIntervals();
-                    fillInPlayerCount();
-                    dateDisplay();
-                    fillDateSelects();
-                    getWeather();
-                });
-            </script>
-            <?php
-                //load in sheet
-                $date = $_SESSION["date"];
-                $sql = "SELECT * FROM teesheets WHERE date = '$date';";
-                $result = mysqli_query($conn, $sql); 
-                $resultCheck = mysqli_num_rows($result);
-                if($resultCheck > 0){
-                    $row = mysqli_fetch_assoc($result);
-                    $startOfDay = $row['startOfDay'];
-                    $endOfDay = $row['endOfDay'];
-                    $intrvl = $row['intrvl'];
-                    echo "<script type='text/javascript'>createTeeSheet('$startOfDay', '$endOfDay', '$intrvl');</script>";
+        <script src="teeTimeHandler.js"></script>
+        <script src="teeSheetHandler.js"></script>
+        <script src="dateHandler.js"></script>
+        <script src="weatherWidget.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                fillTeeTimeSelect("teeTimeSelectStart");
+                fillTeeTimeSelect("teeTimeSelectEnd");
+                fillInIntervals();
+                fillInPlayerCount();
+                dateDisplay();
+                fillDateSelects();
+                getWeather();
+            });
+        </script>
+        <?php
+            //load in sheet
+            $date = $_SESSION["date"];
+            $sql = "SELECT * FROM teesheets WHERE date = '$date';";
+            $result = mysqli_query($conn, $sql); 
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0){
+                $row = mysqli_fetch_assoc($result);
+                $startOfDay = $row['startOfDay'];
+                $endOfDay = $row['endOfDay'];
+                $intrvl = $row['intrvl'];
+                echo "<script type='text/javascript'>createTeeSheet('$startOfDay', '$endOfDay', '$intrvl');</script>";
+            }
+            //load in times
+            $date = $_SESSION["date"];
+            $sql = "SELECT * FROM teetimes WHERE date = '$date';";
+            $result = mysqli_query($conn, $sql); 
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $time = $row['time'];
+                    $booker = $row['booker'];
+                    $num = $row['num'];
+                    echo "<script type='text/javascript'>addTeeTime('$time', '$booker', '$num');</script>";
                 }
-                //load in times
-                $date = $_SESSION["date"];
-                $sql = "SELECT * FROM teetimes WHERE date = '$date';";
-                $result = mysqli_query($conn, $sql); 
-                $resultCheck = mysqli_num_rows($result);
-                if($resultCheck > 0){
-                    while($row = mysqli_fetch_assoc($result)){
-                        $time = $row['time'];
-                        $booker = $row['booker'];
-                        $num = $row['num'];
-                        echo "<script type='text/javascript'>addTeeTime('$time', '$booker', '$num');</script>";
-                    }
-                }
-            ?>
+            }
+        ?>
     </body>
 </html>
