@@ -28,7 +28,7 @@ button {
 }
 
 select {
-    margin-right: 36px;
+    margin-right: 1.4vw;
     border: none;
     border-bottom: 3px solid #04AA6D;
     color: #041025;
@@ -61,7 +61,7 @@ label {
 }
 
 #dateDisplay {
-    margin-left: 60%;
+    margin-left: 50vw;
     color: #FFFFFF;
     font-size: 30px;
     font-family: Garamond, serif;
@@ -70,8 +70,9 @@ label {
 
 /* upper section */
 #upper {
-    width: 84%;
-    column-gap: 39px;
+    width: 96%;
+    min-width: 70%;
+    column-gap: 2vw;
     display: flex;
     margin: auto;
 }
@@ -79,7 +80,7 @@ label {
 #creationSection {
     float: left;
     width: 75%;
-    padding-right: -2vh;
+    min-width: 820px;
 }
 
 /* tee sheet creation section */
@@ -146,6 +147,8 @@ input {
     width: 19.5%;
     float: right;
     margin-left: 1vh;
+    height: 252px;
+    min-width: 280px;
 }
 
 
@@ -154,7 +157,7 @@ input {
     column-gap: 24px;
     display: flex;
     margin: auto;
-    width: 84%;
+    width: 96%;
 }
 
 
@@ -167,6 +170,7 @@ input {
     padding: 24px;
     width: 75%;
     overflow: auto;
+    min-width: 968px;
 }
 
 #teeTableTitle {
@@ -183,6 +187,11 @@ input {
 
 #teeTimesTable {
     border-collapse: collapse; /* This ensures that adjacent cells share borders */
+}
+
+tbody>tr>td>:nth-child(1){
+    max-width: 10px;
+    background-color: #04AA6D;
 }
 
 th, td {
@@ -211,6 +220,7 @@ th {
     width: 20%;
     height: 30%;
     word-wrap: break-word;
+    min-width: 280px;
 }
 
 div.sticky {
@@ -351,9 +361,9 @@ div.sticky {
 
 #current-day {
     font-family: Garamond, serif;
-    font-size: 12px;
-    margin-bottom: -10px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: -30px;
+    margin-top: 0px;
     display: flex;
     justify-content: center;
     color: black;
